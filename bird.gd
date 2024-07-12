@@ -1,18 +1,15 @@
 extends CharacterBody2D
 
-
 @export var SPEED = 250.0
 @export var JUMP_VELOCITY = -400.0
 
 @onready var spriteStanding = $Sprite
 @onready var spriteFlying = $Flying
 
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var mouse_position = null;
 var direction_flying = null;
-
 
 func _physics_process(delta):
 	if is_on_floor() && not Input.is_action_pressed("fly_to_cursor"):
@@ -39,9 +36,5 @@ func _physics_process(delta):
 			
 	if Input.is_action_just_released("fly_to_cursor"):
 		velocity.x = 0
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
 	move_and_slide()

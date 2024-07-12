@@ -2149,7 +2149,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Bird" type="CharacterBody2D"]
@@ -2173,4 +2173,4 @@ layer_0/name = "Ground"
 
 [node name="Flying" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3lbl5")
-frame_progress = 0.166161
+frame_progress = 0.960361

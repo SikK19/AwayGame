@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cacncuw8chqd8"]
+[gd_scene load_steps=15 format=3 uid="uid://cacncuw8chqd8"]
 
 [ext_resource type="Texture2D" uid="uid://7aom0cyopvia" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Bird2/Pixel Art Bird 16x16/BirdSpriteBig.png" id="1_3hrfv"]
 [ext_resource type="Script" path="res://bird.gd" id="1_dipqb"]
@@ -2088,6 +2088,70 @@ texture = ExtResource("1_3hrfv")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dmlsb")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxe5f"]
+atlas = ExtResource("1_3hrfv")
+region = Rect2(0, 167, 160, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tajth"]
+atlas = ExtResource("1_3hrfv")
+region = Rect2(160, 167, 160, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmamj"]
+atlas = ExtResource("1_3hrfv")
+region = Rect2(320, 167, 160, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dca6"]
+atlas = ExtResource("1_3hrfv")
+region = Rect2(480, 167, 160, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qom3w"]
+atlas = ExtResource("1_3hrfv")
+region = Rect2(640, 167, 160, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvbsd"]
+atlas = ExtResource("1_3hrfv")
+region = Rect2(800, 167, 160, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlghl"]
+atlas = ExtResource("1_3hrfv")
+region = Rect2(960, 167, 160, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3apyw"]
+atlas = ExtResource("1_3hrfv")
+region = Rect2(1120, 167, 160, 156)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3lbl5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxe5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tajth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmamj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dca6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qom3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvbsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlghl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3apyw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Bird" type="CharacterBody2D"]
 script = ExtResource("1_dipqb")
 
@@ -2106,3 +2170,7 @@ shape = SubResource("RectangleShape2D_6tbha")
 tile_set = SubResource("TileSet_c3110")
 format = 2
 layer_0/name = "Ground"
+
+[node name="Flying" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3lbl5")
+frame_progress = 0.166161

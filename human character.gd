@@ -33,5 +33,9 @@ func _physics_process(delta):
 			a[0].interact()
 		
 	
-	
+	if Input.is_action_pressed("throw"):
+		$throwing_arm/AnimationPlayer.play("throw_wobble")
+	if Input.is_action_just_released("throw"):
+		$throwing_arm/AnimationPlayer.stop()
+		print("rock throw")
 	

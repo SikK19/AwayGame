@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnhytv3l22cqf"]
+
+[ext_resource type="Script" path="res://human character.gd" id="1_vbv80"]
+[ext_resource type="Texture2D" uid="uid://cfpke4wwpd2l4" path="res://icon.svg" id="2_0n20t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0i8kp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0n20t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8phdw"]
+size = Vector2(94, 127)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2wfok"]
+radius = 52.0
+height = 152.0
+
+[node name="human character" type="CharacterBody2D"]
+script = ExtResource("1_vbv80")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.5, 0)
+scale = Vector2(0.742188, 1)
+sprite_frames = SubResource("SpriteFrames_0i8kp")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0.5)
+shape = SubResource("RectangleShape2D_8phdw")
+
+[node name="interact box" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact box"]
+shape = SubResource("CapsuleShape2D_2wfok")
+
+[node name="throwing_arm" type="Node2D" parent="."]
+
+[node name="throwing test sprite" type="Sprite2D" parent="throwing_arm"]
+position = Vector2(93, -2)
+scale = Vector2(0.109375, 0.109375)
+texture = ExtResource("2_0n20t")
+
+[node name="Camera2D" type="Camera2D" parent="."]

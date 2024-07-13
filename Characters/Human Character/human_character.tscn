@@ -43,7 +43,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrut5"]
-size = Vector2(300, 175)
+size = Vector2(96, 57)
 
 [node name="human character" type="CharacterBody2D"]
 collision_layer = 0
@@ -89,7 +89,7 @@ collision_layer = 32
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="human_close_to_bird"]
-position = Vector2(2.08165e-12, -23)
+position = Vector2(3, -35.5)
 shape = SubResource("RectangleShape2D_rrut5")
 
 [connection signal="timeout" from="rock_throw_cooldown" to="." method="_on_rock_throw_cooldown_timeout"]

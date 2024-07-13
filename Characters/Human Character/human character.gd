@@ -72,15 +72,6 @@ func _physics_process(delta):
 		
 		can_throw = false
 		$rock_throw_cooldown.start()
-		
-	if $human_close_to_bird.has_overlapping_areas() && Input.is_action_just_released("ask_bird_to_land") && not is_bird_on_human:
-		print("trying to land")
-		bird.land_on_character()
-		is_bird_on_human = true
-		
-	if Input.is_action_just_released("ask_bird_to_fly") && is_bird_on_human:
-		bird.fly_away()
-		is_bird_on_human = false
 
 
 func _on_rock_throw_cooldown_timeout():

@@ -34,7 +34,7 @@ func _physics_process(delta):
 	if is_on_character:
 		sprite_flying.stop()
 		position.x = human.position.x
-		position.y = human.position.y - 60
+		position.y = human.position.y - 16
 	
 	if is_on_floor() && not Input.is_action_pressed("fly_to_cursor"):
 		sprite_idle.play("default")

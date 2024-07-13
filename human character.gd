@@ -1,5 +1,10 @@
 extends CharacterBody2D
 
+var rock_scene = load("res://rock_projectile.tscn")
+var throw_force = 1000
+var can_throw = true
+
+var facing_direction = 1
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -12,6 +17,9 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	
+	
+
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -20,7 +28,9 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
+	
 	if direction:
+		facing_direction = direction
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -33,9 +43,22 @@ func _physics_process(delta):
 			a[0].interact()
 		
 	
-	if Input.is_action_pressed("throw"):
+	#play the wobbly arm
+	if Input.is_action_pressed("throw") and can_throw:
 		$throwing_arm/AnimationPlayer.play("throw_wobble")
-	if Input.is_action_just_released("throw"):
+	if Input.is_action_just_released("throw") and $throwing_arm/AnimationPlayer.is_playing():
+		#create a new rock scene, throw it in the direction of the player is currently aiming in
+		var rock = rock_scene.instantiate()
+		get_parent().add_child(rock)
+		rock.global_position = $throwing_arm.global_position
+		rock.linear_velocity = Vector2(throw_force * facing_direction,0).rotated($throwing_arm.rotation * facing_direction)
+		
 		$throwing_arm/AnimationPlayer.stop()
-		print("rock throw")
+		
+		can_throw = false
+		$rock_throw_cooldown.start()
 	
+
+
+func _on_rock_throw_cooldown_timeout():
+	can_throw = true

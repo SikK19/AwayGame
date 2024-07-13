@@ -43,6 +43,7 @@ _data = {
 }
 
 [node name="human character" type="CharacterBody2D"]
+collision_layer = 0
 script = ExtResource("1_vbv80")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -75,3 +76,9 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="rock_throw_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="rock_throw_cooldown" to="." method="_on_rock_throw_cooldown_timeout"]

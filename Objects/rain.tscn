@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlivpu42akffh"]
+[gd_scene load_steps=10 format=3 uid="uid://dlivpu42akffh"]
 
 [ext_resource type="Script" path="res://Objects/rain.gd" id="1_4leae"]
 [ext_resource type="Texture2D" uid="uid://dbdechhlhfduy" path="res://Objects/Rain effect/rain effect.png" id="2_3ghiu"]
@@ -53,10 +53,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_acar5"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r051"]
-
 [node name="Rain" type="Area2D"]
 collision_layer = 128
 collision_mask = 64
@@ -66,11 +62,3 @@ script = ExtResource("1_4leae")
 sprite_frames = SubResource("SpriteFrames_2pcl6")
 frame = 1
 frame_progress = 0.347209
-
-[node name="bird_stop_left" type="CollisionShape2D" parent="."]
-position = Vector2(29, 0)
-shape = SubResource("RectangleShape2D_acar5")
-
-[node name="bird_stop_right" type="CollisionShape2D" parent="."]
-position = Vector2(-30, 0)
-shape = SubResource("RectangleShape2D_1r051")

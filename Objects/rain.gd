@@ -1,11 +1,23 @@
 extends Area2D
 
+@export var area_left:Area2D
+@export var area_right:Area2D
+@export var bird:Node2D
 
-# Called when the node enters the scene tree for the first time.
+var wind_force = 0
+
 func _ready():
-	pass # Replace with function body.
-
+	$AnimatedSprite2D.play("default")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if not area_left.has_overlapping_areas() && not area_right.has_overlapping_areas():
+		wind_force = 0
+	if area_left.has_overlapping_areas():
+		wind_force += 10
+		print("wind_force: " + str(wind_force))
+		bird.velocity.x += wind_force
+	if area_right.has_overlapping_areas():
+		wind_force += 10
+		print("wind_force: " + str(wind_force))
+		bird.velocity.x -= wind_force

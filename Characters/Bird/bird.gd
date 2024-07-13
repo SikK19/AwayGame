@@ -13,8 +13,8 @@ var is_on_character = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var mouse_position = null;
-var direction_flying = null;
+var mouse_position = null
+var direction_flying = null
 
 func _physics_process(delta):
 	if is_on_character:
@@ -35,7 +35,7 @@ func _physics_process(delta):
 		
 	mouse_position = get_global_mouse_position()
 	if Input.is_action_pressed("fly_to_cursor") && not is_on_character:
-		direction_flying = (mouse_position - position).normalized()
+		direction_flying = (mouse_position - position).normalized()	
 		velocity = (direction_flying * SPEED)
 		if abs(mouse_position.x - position.x) > 10:
 			if direction_flying.x > 0.2:
@@ -67,9 +67,6 @@ func _physics_process(delta):
 	if has_key && $bird_close_to_human.has_overlapping_areas():
 		human.has_key = true;
 		has_key = false;
-		
-	if has_key:
-		print("key taken")
 
 	move_and_slide()
 	

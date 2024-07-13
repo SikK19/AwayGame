@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cacncuw8chqd8"]
+[gd_scene load_steps=18 format=3 uid="uid://cacncuw8chqd8"]
 
 [ext_resource type="Script" path="res://Characters/Bird/bird.gd" id="1_dipqb"]
 [ext_resource type="Texture2D" uid="uid://7aom0cyopvia" path="res://Characters/Bird/Assets/BirdSpriteBig.png" id="2_ooqg4"]
@@ -2158,6 +2158,8 @@ size = Vector2(139.5, 131.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7p08"]
 size = Vector2(150, 150)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8ls5"]
+
 [node name="Bird" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_dipqb")
@@ -2197,3 +2199,10 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactrange"]
 shape = SubResource("RectangleShape2D_d7p08")
+
+[node name="bird_close_to_rain" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bird_close_to_rain"]
+shape = SubResource("RectangleShape2D_d8ls5")

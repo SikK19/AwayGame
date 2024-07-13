@@ -1,23 +1,16 @@
-extends Area2D
+extends StaticBody2D
 
-@export var area_left:Area2D
-@export var area_right:Area2D
-@export var bird:Node2D
-
-var wind_force = 0
+@export var starting_state:bool = true
 
 func _ready():
-	$AnimatedSprite2D.play("default")
+	$TextureRect.visible = starting_state
+	set_collision_layer_value(7,starting_state)
+	
+	$TextureRect.size = $CollisionShape2D.shape.size
+	$TextureRect.position = $CollisionShape2D.position - $CollisionShape2D.shape.size/2
+	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if not area_left.has_overlapping_areas() && not area_right.has_overlapping_areas():
-		wind_force = 0
-	if area_left.has_overlapping_areas():
-		wind_force += 10
-		print("wind_force: " + str(wind_force))
-		bird.velocity.x += wind_force
-	if area_right.has_overlapping_areas():
-		wind_force += 10
-		print("wind_force: " + str(wind_force))
-		bird.velocity.x -= wind_force
+
+func activate():
+	$TextureRect.visible = not $TextureRect.visible
+	set_collision_layer_value(7,not get_collision_layer_value(7))

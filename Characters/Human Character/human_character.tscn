@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://bnhytv3l22cqf"]
 
 [ext_resource type="Script" path="res://Characters/Human Character/human character.gd" id="1_vbv80"]
-[ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="2_0n20t"]
+[ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="2_0n20t"]
 [ext_resource type="Texture2D" uid="uid://df28qr6yof5oy" path="res://Characters/Human Character/Char_Idle.PNG" id="2_ixko3"]
 [ext_resource type="Texture2D" uid="uid://c2q5jsbbls6m2" path="res://Characters/Human Character/Char_Running.PNG" id="4_7fbde"]
 [ext_resource type="Script" path="res://Characters/Human Character/CameraBirdHuman.gd" id="4_qc14b"]
@@ -96,7 +96,8 @@ animations = [{
 }]
 
 [node name="human character" type="CharacterBody2D"]
-collision_layer = 0
+collision_layer = 32
+collision_mask = 33
 script = ExtResource("1_vbv80")
 
 [node name="Idle" type="AnimatedSprite2D" parent="."]
@@ -140,9 +141,19 @@ collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="human_close_to_bird"]
 position = Vector2(0, -6.5)
+position = Vector2(2.08165e-12, -23)
 shape = SubResource("RectangleShape2D_rrut5")
 
 [node name="Running" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rullm")
+
+[node name="ladder_detector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder_detector"]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_0xhmg")
+debug_color = Color(0.86445, 0.297757, 0.513246, 0.42)
 
 [connection signal="timeout" from="rock_throw_cooldown" to="." method="_on_rock_throw_cooldown_timeout"]

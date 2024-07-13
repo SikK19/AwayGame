@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs08vpu0ebih"]
+[gd_scene load_steps=9 format=3 uid="uid://bs08vpu0ebih"]
 
+[ext_resource type="PackedScene" uid="uid://bq5uuayncok68" path="res://Objects/button.tscn" id="1_eb4mk"]
 [ext_resource type="PackedScene" uid="uid://d1dsvu11f3iqa" path="res://Objects/interactable.tscn" id="1_qq5yx"]
-[ext_resource type="Texture2D" uid="uid://cfpke4wwpd2l4" path="res://Characters/Human Character/icon.svg" id="2_rs2rm"]
+[ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="2_rs2rm"]
 [ext_resource type="PackedScene" uid="uid://bnhytv3l22cqf" path="res://Characters/Human Character/human_character.tscn" id="3_y8kq6"]
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="4_t31tm"]
+[ext_resource type="PackedScene" uid="uid://ctilqc6y0uf8b" path="res://Objects/hatch.tscn" id="6_kum8n"]
+[ext_resource type="PackedScene" uid="uid://vg6yk2bkrf2y" path="res://Objects/window.tscn" id="7_tyeqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iarkt"]
-size = Vector2(1140, 57)
+size = Vector2(1902, 57)
 
 [node name="character test enviroment" type="Node2D"]
 
@@ -15,16 +18,23 @@ position = Vector2(902, 557)
 activated_texture = ExtResource("2_rs2rm")
 unactivated_texture = ExtResource("2_rs2rm")
 
+[node name="hatch" parent="." instance=ExtResource("6_kum8n")]
+position = Vector2(620, 403)
+
+[node name="button" parent="." node_paths=PackedStringArray("conected_objects") instance=ExtResource("1_eb4mk")]
+position = Vector2(89, 527)
+conected_objects = [NodePath("../hatch")]
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(539, 490)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(35, 127.5)
+position = Vector2(189, 127.5)
 shape = SubResource("RectangleShape2D_iarkt")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(31, 127)
-scale = Vector2(8.95313, 0.40625)
+position = Vector2(191.5, 127)
+scale = Vector2(14.7578, 0.40625)
 texture = ExtResource("2_rs2rm")
 
 [node name="human character" parent="." node_paths=PackedStringArray("bird") instance=ExtResource("3_y8kq6")]
@@ -35,4 +45,8 @@ bird = NodePath("../Bird")
 position = Vector2(800, 223)
 scale = Vector2(0.5, 0.5)
 SPEED = 400.0
-human = NodePath("../human character")
+
+
+[node name="window" parent="." instance=ExtResource("7_tyeqv")]
+position = Vector2(1641, 481)
+

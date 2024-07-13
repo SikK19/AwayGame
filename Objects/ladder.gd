@@ -1,5 +1,6 @@
 extends Area2D
 
+var already_activated = false
 @export var start_position:Vector2= Vector2(0,0)
 @export var end_position:Vector2 = Vector2(0,1000)
 
@@ -13,5 +14,6 @@ func _ready():
 	animation.track_set_key_value(track, last_key, end_position)
 
 func activate():
-	print("hello")
-	$AnimationPlayer.play("ladder drop")
+	if not already_activated:
+		$AnimationPlayer.play("ladder drop")
+		already_activated = true

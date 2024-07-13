@@ -10,6 +10,9 @@ var has_key = false
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@export var bird:Node2D 
+var is_bird_on_human = false
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -38,8 +41,22 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("interact"):
 		var a = $"interact box".get_overlapping_areas()
 		if a.size() > 0 and not a.size() >=2:
+
 			a[0].interact(self)
-		
+			
+	if direction > 0:
+		$AnimatedSprite2D.flip_h = false
+		if is_bird_on_human:
+			bird.sprite_standing.flip_h = true
+		$"throwing_arm/throwing test sprite".position.x = 93
+		$"throwing_arm/throwing test sprite".position.y = -2
+	if direction < 0:
+		$AnimatedSprite2D.flip_h = true
+		if is_bird_on_human:
+			bird.sprite_standing.flip_h = false
+		$"throwing_arm/throwing test sprite".position.x = -93
+		$"throwing_arm/throwing test sprite".position.y = 20
+
 	
 	#play the wobbly arm
 	if Input.is_action_pressed("throw") and can_throw:
@@ -55,7 +72,15 @@ func _physics_process(delta):
 		
 		can_throw = false
 		$rock_throw_cooldown.start()
-	
+		
+	if $human_close_to_bird.has_overlapping_areas() && Input.is_action_just_released("ask_bird_to_land") && not is_bird_on_human:
+		print("trying to land")
+		bird.land_on_character()
+		is_bird_on_human = true
+		
+	if Input.is_action_just_released("ask_bird_to_fly") && is_bird_on_human:
+		bird.fly_away()
+		is_bird_on_human = false
 
 
 func _on_rock_throw_cooldown_timeout():

@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnhytv3l22cqf"]
+[gd_scene load_steps=10 format=3 uid="uid://bnhytv3l22cqf"]
 
 [ext_resource type="Script" path="res://Characters/Human Character/human character.gd" id="1_vbv80"]
-[ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="2_0n20t"]
+[ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="2_0n20t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0i8kp"]
 animations = [{
@@ -44,6 +44,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrut5"]
 size = Vector2(300, 175)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xhmg"]
+size = Vector2(23, 113)
 
 [node name="human character" type="CharacterBody2D"]
 collision_layer = 0
@@ -91,5 +94,12 @@ collision_mask = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="human_close_to_bird"]
 position = Vector2(2.08165e-12, -23)
 shape = SubResource("RectangleShape2D_rrut5")
+
+[node name="ladder_detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder_detector"]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_0xhmg")
+debug_color = Color(0.86445, 0.297757, 0.513246, 0.42)
 
 [connection signal="timeout" from="rock_throw_cooldown" to="." method="_on_rock_throw_cooldown_timeout"]

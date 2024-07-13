@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cya20r6rudmtu"]
+
+[ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="1_ag6cf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ek6hh"]
+size = Vector2(42, 155)
+
+[node name="ladder" type="Area2D"]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 67.5)
+shape = SubResource("RectangleShape2D_ek6hh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.462745, 1, 0.262745, 1)
+position = Vector2(0.5, 67)
+scale = Vector2(0.289063, 1.20313)
+texture = ExtResource("1_ag6cf")

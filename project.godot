@@ -72,6 +72,7 @@ fly_to_cursor={
 2d_physics/layer_5="bird-interactable"
 2d_physics/layer_6="human"
 2d_physics/layer_7="bird"
+2d_physics/layer_8="ladder"
 
 [rendering]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cacncuw8chqd8"]
+[gd_scene load_steps=16 format=3 uid="uid://cacncuw8chqd8"]
 
 [ext_resource type="Script" path="res://Characters/Bird/bird.gd" id="1_dipqb"]
 [ext_resource type="Texture2D" uid="uid://7aom0cyopvia" path="res://Characters/Bird/Assets/BirdSpriteBig.png" id="2_ooqg4"]
@@ -2152,7 +2152,10 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24e78"]
+
 [node name="Bird" type="CharacterBody2D"]
+collision_layer = 0
 script = ExtResource("1_dipqb")
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -2174,3 +2177,10 @@ layer_0/name = "Ground"
 [node name="Flying" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3lbl5")
 frame_progress = 0.918565
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_24e78")

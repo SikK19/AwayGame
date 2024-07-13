@@ -56,7 +56,6 @@ func _physics_process(delta):
 			bird.sprite_standing.flip_h = false
 		$"throwing_arm/throwing test sprite".position.x = -93
 		$"throwing_arm/throwing test sprite".position.y = 20
-
 	
 	#play the wobbly arm
 	if Input.is_action_pressed("throw") and can_throw:

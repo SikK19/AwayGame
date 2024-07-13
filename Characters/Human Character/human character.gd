@@ -6,24 +6,33 @@ var can_throw = true
 
 var facing_direction = 1
 var has_key = false
+var is_climbing = false
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-@export var bird:Node2D 
+@export var bird:Node2D
 var is_bird_on_human = false
 
-@onready var running = $Running
-@onready var idle = $Idle
+@onready var animations = $Animations
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready():
+	$Camera2D.bird = bird
+
 func _physics_process(delta):
 	if (velocity.x > 0 || velocity.x < 0) && velocity.y == 0:
-		change_idle_to_running()
-	else:
-		change_running_to_idle()
+		animations.play("Running")
+	if velocity == Vector2(0,0):
+		animations.play("Idle")
+	if velocity.y > 0 && not is_climbing:
+		animations.play("Jumping")
+	if velocity.y > 0 && is_climbing:
+		animations.play("Climbing")
+	
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -51,13 +60,13 @@ func _physics_process(delta):
 			a[0].interact(self)
 			
 	if direction > 0:
-		running.flip_h = false
+		animations.flip_h = false
 		if is_bird_on_human:
 			bird.sprite_idle.flip_h = false
 		$"throwing_arm/throwing test sprite".position.x = 93
 		$"throwing_arm/throwing test sprite".position.y = -2
 	if direction < 0:
-		running.flip_h = true
+		animations.flip_h = true
 		if is_bird_on_human:
 			bird.sprite_idle.flip_h = true
 		$"throwing_arm/throwing test sprite".position.x = -93
@@ -77,19 +86,6 @@ func _physics_process(delta):
 		
 		can_throw = false
 		$rock_throw_cooldown.start()
-		
-func change_idle_to_running():
-	idle.stop()
-	idle.visible = false
-	running.play("default")
-	running.visible = true
-	
-func change_running_to_idle():
-	running.stop()
-	running.visible = false
-	idle.play("default")
-	idle.visible = true
-
 
 func _on_rock_throw_cooldown_timeout():
 	can_throw = true

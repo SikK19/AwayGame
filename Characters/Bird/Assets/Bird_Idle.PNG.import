@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eu1hldx2slbu"
-path="res://.godot/imported/Groundtiles Bricks Right Inner Edge.png-30d8a694f17973d244acee3739d1e525.ctex"
+uid="uid://cudgdfqhntuqj"
+path="res://.godot/imported/Bird_Idle.PNG-4db7fff758eaa7d5f55e4379d969ea17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ground Tiles/Bricks/Groundtiles Bricks Right Inner Edge.png"
-dest_files=["res://.godot/imported/Groundtiles Bricks Right Inner Edge.png-30d8a694f17973d244acee3739d1e525.ctex"]
+source_file="res://Characters/Bird/Assets/Bird_Idle.PNG"
+dest_files=["res://.godot/imported/Bird_Idle.PNG-4db7fff758eaa7d5f55e4379d969ea17.ctex"]
 
 [params]
 

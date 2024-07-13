@@ -12,5 +12,5 @@ func _ready():
 	
 	
 	
-func interact(_player):
+func interact(player):
 	print("test interact")

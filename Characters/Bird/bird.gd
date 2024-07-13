@@ -20,7 +20,6 @@ func _physics_process(delta):
 		position.x = human.position.x
 		position.y = human.position.y - 60
 	
-	
 	if is_on_floor() && not Input.is_action_pressed("fly_to_cursor"):
 		sprite_standing.visible = true
 		sprite_flying.visible = false
@@ -47,6 +46,9 @@ func _physics_process(delta):
 				
 	if Input.is_action_just_released("fly_to_cursor"):
 		velocity.x = 0
+		
+	if Input.is_action_just_released("interact") && $interactrange.has_overlapping_areas():
+		$interactrange.get_overlapping_areas()[0].interact(self)
 
 	move_and_slide()
 	

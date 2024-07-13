@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bs08vpu0ebih"]
+[gd_scene load_steps=12 format=3 uid="uid://bs08vpu0ebih"]
 
 [ext_resource type="PackedScene" uid="uid://bq5uuayncok68" path="res://Objects/button.tscn" id="1_eb4mk"]
 [ext_resource type="PackedScene" uid="uid://bnhytv3l22cqf" path="res://Characters/Human Character/human_character.tscn" id="3_y8kq6"]
@@ -9,20 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://cy0pnhwrhhsiy" path="res://Objects/Key.tscn" id="8_h42w7"]
 [ext_resource type="PackedScene" uid="uid://dwy3g8sthn1kw" path="res://Objects/door_r.tscn" id="9_wjbmo"]
 [ext_resource type="PackedScene" uid="uid://dcnwjpxwaffiq" path="res://Objects/ladder.tscn" id="10_6eqgg"]
-[ext_resource type="PackedScene" uid="uid://ccd75n2u05s3h" path="res://Objects/rain.tscn" id="10_8bnq7"]
+[ext_resource type="PackedScene" uid="uid://cuyxkbyvdwq3k" path="res://Objects/string.tscn" id="10_ogwd7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iarkt"]
 size = Vector2(1902, 57)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_23d6o"]
-resource_local_to_scene = true
-size = Vector2(287, 240.5)
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_0ktlm"]
-resource_local_to_scene = true
-frames = 2
-frame_0/duration = 0.2
-frame_1/duration = 0.2
 
 [node name="character test enviroment" type="Node2D"]
 
@@ -60,21 +50,13 @@ position = Vector2(182, 501)
 position = Vector2(-135, 561)
 
 [node name="ladder" parent="." instance=ExtResource("10_6eqgg")]
-position = Vector2(225, 263)
+position = Vector2(219, 263)
 start_position = Vector2(225, 263)
 end_position = Vector2(206, 443)
 
 [node name="window" parent="." instance=ExtResource("7_tyeqv")]
 position = Vector2(1028, 519)
 
-[node name="Rain" parent="." instance=ExtResource("10_8bnq7")]
-position = Vector2(105, 344)
-
-[node name="CollisionShape2D" parent="Rain" index="0"]
-position = Vector2(168.5, 117.75)
-shape = SubResource("RectangleShape2D_23d6o")
-
-[node name="rain" parent="Rain" index="1"]
-texture = SubResource("AnimatedTexture_0ktlm")
-
-[editable path="Rain"]
+[node name="string" parent="." node_paths=PackedStringArray("conected_objects") instance=ExtResource("10_ogwd7")]
+position = Vector2(370, 387)
+conected_objects = [NodePath("../ladder")]

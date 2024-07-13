@@ -1,16 +1,47 @@
-[gd_scene load_steps=10 format=3 uid="uid://bs08vpu0ebih"]
 
-[ext_resource type="PackedScene" path="res://Objects/button.tscn" id="1_eb4mk"]
+[gd_scene load_steps=17 format=3 uid="uid://bs08vpu0ebih"]
+
+
+[ext_resource type="PackedScene" uid="uid://bq5uuayncok68" path="res://Objects/button.tscn" id="1_eb4mk"]
 [ext_resource type="PackedScene" uid="uid://d1dsvu11f3iqa" path="res://Objects/interactable.tscn" id="1_qq5yx"]
 [ext_resource type="PackedScene" uid="uid://bnhytv3l22cqf" path="res://Characters/Human Character/human_character.tscn" id="3_y8kq6"]
-[ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="4_5aiah"]
+[ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="4_5aiah"]
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="4_t31tm"]
-[ext_resource type="PackedScene" path="res://Objects/hatch.tscn" id="6_kum8n"]
-[ext_resource type="PackedScene" uid="uid://o4sufrciwpyy" path="res://Objects/window.tscn" id="7_tyeqv"]
-[ext_resource type="PackedScene" uid="uid://dm2dsfgr6qjmb" path="res://Objects/Key.tscn" id="8_h42w7"]
+
+[ext_resource type="PackedScene" uid="uid://ctilqc6y0uf8b" path="res://Objects/hatch.tscn" id="6_kum8n"]
+[ext_resource type="PackedScene" uid="uid://vg6yk2bkrf2y" path="res://Objects/window.tscn" id="7_tyeqv"]
+[ext_resource type="PackedScene" uid="uid://c4xk8gg716cyc" path="res://Objects/ladder.tscn" id="8_fdqcp"]
+[ext_resource type="PackedScene" uid="uid://ccd75n2u05s3h" path="res://Objects/rain.tscn" id="9_e3fuo"]
+[ext_resource type="Texture2D" uid="uid://bmbdj1ic3vwpe" path="res://Assets/rain/rain_progger_art0000.png" id="10_st5a0"]
+[ext_resource type="Texture2D" uid="uid://63x2sjki7i1p" path="res://Assets/rain/rain_progger_art0001.png" id="11_hynh1"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iarkt"]
 size = Vector2(1902, 57)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_s5hv7"]
+resource_local_to_scene = true
+frames = 2
+frame_0/texture = ExtResource("10_st5a0")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("11_hynh1")
+frame_1/duration = 0.2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hk1em"]
+resource_local_to_scene = true
+size = Vector2(256, 141)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_k0nm6"]
+resource_local_to_scene = true
+frames = 2
+frame_0/texture = ExtResource("10_st5a0")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("11_hynh1")
+frame_1/duration = 0.2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0r7t"]
+resource_local_to_scene = true
+size = Vector2(209, 247)
 
 [node name="character test enviroment" type="Node2D"]
 
@@ -18,11 +49,11 @@ size = Vector2(1902, 57)
 position = Vector2(902, 557)
 
 [node name="hatch" parent="." instance=ExtResource("6_kum8n")]
-position = Vector2(620, 403)
+position = Vector2(1067, 218)
 
 [node name="button" parent="." node_paths=PackedStringArray("conected_objects") instance=ExtResource("1_eb4mk")]
 position = Vector2(89, 527)
-conected_objects = [NodePath("../hatch")]
+conected_objects = [NodePath("../ladder"), NodePath("../Rain"), NodePath("../hatch")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(539, 490)
@@ -47,5 +78,33 @@ human = NodePath("../human character")
 [node name="window" parent="." instance=ExtResource("7_tyeqv")]
 position = Vector2(1641, 481)
 
+[node name="ladder" parent="." instance=ExtResource("8_fdqcp")]
+position = Vector2(-121, 235)
+
+[node name="Rain" parent="." instance=ExtResource("9_e3fuo")]
+position = Vector2(745, 486)
+collision_layer = 0
+starting_state = false
+
+[node name="TextureRect" parent="Rain" index="0"]
+texture = SubResource("AnimatedTexture_s5hv7")
+
+[node name="CollisionShape2D" parent="Rain" index="1"]
+position = Vector2(1, -3.5)
+shape = SubResource("RectangleShape2D_hk1em")
+
+[node name="Rain2" parent="." instance=ExtResource("9_e3fuo")]
+
+[node name="TextureRect" parent="Rain2" index="0"]
+texture = SubResource("AnimatedTexture_k0nm6")
+
+[node name="CollisionShape2D" parent="Rain2" index="1"]
+position = Vector2(104.5, 123.5)
+shape = SubResource("RectangleShape2D_p0r7t")
+
+[editable path="Rain"]
+[editable path="Rain2"]
+
 [node name="Key" parent="." instance=ExtResource("8_h42w7")]
 position = Vector2(-34, 317)
+

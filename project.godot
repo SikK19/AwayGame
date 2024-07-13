@@ -14,6 +14,7 @@ config/name="AwayGame"
 run/main_scene="res://Level/character_test_enviroment.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+run/layer_8=""
 
 [display]
 
@@ -68,7 +69,9 @@ bird_interact={
 2d_physics/layer_5="bird-interactable"
 2d_physics/layer_6="human"
 2d_physics/layer_7="bird"
-2d_physics/layer_8="rain"
+
+2d_physics/layer_8="ladder"
+
 
 [rendering]
 

@@ -89,3 +89,7 @@ func _physics_process(delta):
 
 func _on_rock_throw_cooldown_timeout():
 	can_throw = true
+
+func loose_key():
+	has_key = false
+	#TODO: Ui updaten

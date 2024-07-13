@@ -27,10 +27,12 @@ position = Vector2(31, 127)
 scale = Vector2(8.95313, 0.40625)
 texture = ExtResource("2_rs2rm")
 
-[node name="human character" parent="." instance=ExtResource("3_y8kq6")]
+[node name="human character" parent="." node_paths=PackedStringArray("bird") instance=ExtResource("3_y8kq6")]
 position = Vector2(437, 294)
+bird = NodePath("../Bird")
 
-[node name="Bird" parent="." instance=ExtResource("4_t31tm")]
+[node name="Bird" parent="." node_paths=PackedStringArray("human") instance=ExtResource("4_t31tm")]
 position = Vector2(800, 223)
 scale = Vector2(0.5, 0.5)
 SPEED = 400.0
+human = NodePath("../human character")

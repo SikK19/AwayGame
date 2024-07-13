@@ -7,6 +7,8 @@ extends CharacterBody2D
 @onready var sprite_standing = $Sprite
 @onready var sprite_flying = $Flying
 
+var has_key = false
+
 var is_on_character = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -58,6 +60,16 @@ func _physics_process(delta):
 	if is_on_character && Input.is_action_pressed("fly_to_cursor"):
 		is_on_character = false
 		human.is_bird_on_human = false
+		
+	if $interactrange.has_overlapping_areas() && Input.is_action_pressed("bird_interact"):
+		$interactrange.get_overlapping_areas()[0].interact(self)
+		
+	if has_key && $bird_close_to_human.has_overlapping_areas():
+		human.has_key = true;
+		has_key = false;
+		
+	if has_key:
+		print("key taken")
 
 	move_and_slide()
 	
@@ -67,4 +79,5 @@ func land_on_character():
 	is_on_character = true
 	human.is_bird_on_human = true
 	
-
+func take_key():
+	has_key = true

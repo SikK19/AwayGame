@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs08vpu0ebih"]
+
+[ext_resource type="PackedScene" uid="uid://d1dsvu11f3iqa" path="res://Objects/interactable.tscn" id="1_qq5yx"]
+[ext_resource type="Texture2D" uid="uid://cfpke4wwpd2l4" path="res://Characters/Human Character/icon.svg" id="2_rs2rm"]
+[ext_resource type="PackedScene" uid="uid://bnhytv3l22cqf" path="res://Characters/Human Character/human_character.tscn" id="3_y8kq6"]
+[ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="4_t31tm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iarkt"]
+size = Vector2(1140, 57)
+
+[node name="character test enviroment" type="Node2D"]
+
+[node name="interactable" parent="." instance=ExtResource("1_qq5yx")]
+position = Vector2(902, 557)
+activated_texture = ExtResource("2_rs2rm")
+unactivated_texture = ExtResource("2_rs2rm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(539, 490)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(35, 127.5)
+shape = SubResource("RectangleShape2D_iarkt")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(31, 127)
+scale = Vector2(8.95313, 0.40625)
+texture = ExtResource("2_rs2rm")
+
+[node name="human character" parent="." instance=ExtResource("3_y8kq6")]
+position = Vector2(437, 294)
+
+[node name="Bird" parent="." instance=ExtResource("4_t31tm")]
+position = Vector2(800, 223)
+scale = Vector2(0.5, 0.5)
+SPEED = 400.0

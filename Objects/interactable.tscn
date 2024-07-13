@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1dsvu11f3iqa"]
+
+[ext_resource type="Script" path="res://Objects/interactable.gd" id="1_okl61"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bn4tp"]
+radius = 52.0865
+
+[node name="interactable" type="Area2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_okl61")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bn4tp")
+
+[node name="activated" type="Sprite2D" parent="."]
+
+[node name="unactivated" type="Sprite2D" parent="."]

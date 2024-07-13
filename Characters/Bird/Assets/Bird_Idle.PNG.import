@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://ci58nddph1b5r"
-
-path="res://.godot/imported/Groundtiles Rock.png-f6f90b83a5f2d67380cff66ca9d8d7ac.ctex"
+uid="uid://cudgdfqhntuqj"
+path="res://.godot/imported/Bird_Idle.PNG-4db7fff758eaa7d5f55e4379d969ea17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ground Tiles/Groundtiles Rock.png"
-dest_files=["res://.godot/imported/Groundtiles Rock.png-f6f90b83a5f2d67380cff66ca9d8d7ac.ctex"]
+source_file="res://Characters/Bird/Assets/Bird_Idle.PNG"
+dest_files=["res://.godot/imported/Bird_Idle.PNG-4db7fff758eaa7d5f55e4379d969ea17.ctex"]
 
 [params]
 

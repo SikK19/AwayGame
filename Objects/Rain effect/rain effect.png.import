@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://ci58nddph1b5r"
-
-path="res://.godot/imported/Groundtiles Rock.png-f6f90b83a5f2d67380cff66ca9d8d7ac.ctex"
+uid="uid://dbdechhlhfduy"
+path="res://.godot/imported/rain effect.png-fc894c7bd9781689f1dbd088f31c3c38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ground Tiles/Groundtiles Rock.png"
-dest_files=["res://.godot/imported/Groundtiles Rock.png-f6f90b83a5f2d67380cff66ca9d8d7ac.ctex"]
+source_file="res://Objects/Rain effect/rain effect.png"
+dest_files=["res://.godot/imported/rain effect.png-fc894c7bd9781689f1dbd088f31c3c38.ctex"]
 
 [params]
 

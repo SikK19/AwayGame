@@ -1,16 +1,20 @@
+
 [gd_scene load_steps=17 format=3 uid="uid://bs08vpu0ebih"]
+
 
 [ext_resource type="PackedScene" uid="uid://bq5uuayncok68" path="res://Objects/button.tscn" id="1_eb4mk"]
 [ext_resource type="PackedScene" uid="uid://d1dsvu11f3iqa" path="res://Objects/interactable.tscn" id="1_qq5yx"]
 [ext_resource type="PackedScene" uid="uid://bnhytv3l22cqf" path="res://Characters/Human Character/human_character.tscn" id="3_y8kq6"]
 [ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="4_5aiah"]
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="4_t31tm"]
+
 [ext_resource type="PackedScene" uid="uid://ctilqc6y0uf8b" path="res://Objects/hatch.tscn" id="6_kum8n"]
 [ext_resource type="PackedScene" uid="uid://vg6yk2bkrf2y" path="res://Objects/window.tscn" id="7_tyeqv"]
 [ext_resource type="PackedScene" uid="uid://c4xk8gg716cyc" path="res://Objects/ladder.tscn" id="8_fdqcp"]
 [ext_resource type="PackedScene" uid="uid://ccd75n2u05s3h" path="res://Objects/rain.tscn" id="9_e3fuo"]
 [ext_resource type="Texture2D" uid="uid://bmbdj1ic3vwpe" path="res://Assets/rain/rain_progger_art0000.png" id="10_st5a0"]
 [ext_resource type="Texture2D" uid="uid://63x2sjki7i1p" path="res://Assets/rain/rain_progger_art0001.png" id="11_hynh1"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iarkt"]
 size = Vector2(1902, 57)
@@ -68,9 +72,7 @@ position = Vector2(437, 294)
 bird = NodePath("../Bird")
 
 [node name="Bird" parent="." node_paths=PackedStringArray("human") instance=ExtResource("4_t31tm")]
-position = Vector2(800, 223)
-scale = Vector2(0.5, 0.5)
-SPEED = 400.0
+position = Vector2(800, 331)
 human = NodePath("../human character")
 
 [node name="window" parent="." instance=ExtResource("7_tyeqv")]
@@ -102,3 +104,7 @@ shape = SubResource("RectangleShape2D_p0r7t")
 
 [editable path="Rain"]
 [editable path="Rain2"]
+
+[node name="Key" parent="." instance=ExtResource("8_h42w7")]
+position = Vector2(-34, 317)
+

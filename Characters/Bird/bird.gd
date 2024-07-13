@@ -60,10 +60,8 @@ func _physics_process(delta):
 			if direction_flying.x < -0.1:
 				sprite_idle.flip_h = true
 				sprite_flying.flip_h = true
-				
-	
 		
-	if Input.is_action_just_released("interact") && $interactrange.has_overlapping_areas():
+	if Input.is_action_just_pressed("interact") && $interactrange.has_overlapping_areas():
 		$interactrange.get_overlapping_areas()[0].interact(self)
 		
 	if Input.is_action_just_released("fly_to_cursor") && $bird_close_to_human.has_overlapping_areas():

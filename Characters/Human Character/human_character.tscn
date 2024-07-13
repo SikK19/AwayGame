@@ -1,13 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnhytv3l22cqf"]
+[gd_scene load_steps=19 format=3 uid="uid://bnhytv3l22cqf"]
 
 [ext_resource type="Script" path="res://Characters/Human Character/human character.gd" id="1_vbv80"]
 [ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="2_0n20t"]
+[ext_resource type="Texture2D" uid="uid://df28qr6yof5oy" path="res://Characters/Human Character/Char_Idle.PNG" id="2_ixko3"]
+[ext_resource type="Texture2D" uid="uid://c2q5jsbbls6m2" path="res://Characters/Human Character/Char_Running.PNG" id="4_7fbde"]
+[ext_resource type="Script" path="res://Characters/Human Character/CameraBirdHuman.gd" id="4_qc14b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53abq"]
+atlas = ExtResource("2_ixko3")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r103t"]
+atlas = ExtResource("2_ixko3")
+region = Rect2(34, 0, 34, 34)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0i8kp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_0n20t")
+"texture": SubResource("AtlasTexture_53abq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r103t")
 }],
 "loop": true,
 "name": &"default",
@@ -15,7 +29,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8phdw"]
-size = Vector2(94, 127)
+size = Vector2(24, 32)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2wfok"]
 radius = 52.0
@@ -43,23 +57,54 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrut5"]
-size = Vector2(300, 175)
+size = Vector2(26, 19)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xhmg"]
-size = Vector2(23, 113)
+[sub_resource type="AtlasTexture" id="AtlasTexture_or8oa"]
+atlas = ExtResource("4_7fbde")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2f2o"]
+atlas = ExtResource("4_7fbde")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5awib"]
+atlas = ExtResource("4_7fbde")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qlka"]
+atlas = ExtResource("4_7fbde")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rullm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_or8oa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2f2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5awib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qlka")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="human character" type="CharacterBody2D"]
 collision_layer = 32
 collision_mask = 33
 script = ExtResource("1_vbv80")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2.5, 0)
-scale = Vector2(0.742188, 1)
+[node name="Idle" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
 sprite_frames = SubResource("SpriteFrames_0i8kp")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(3, 0.5)
 shape = SubResource("RectangleShape2D_8phdw")
 
 [node name="interact box" type="Area2D" parent="."]
@@ -83,6 +128,8 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+script = ExtResource("4_qc14b")
 
 [node name="rock_throw_cooldown" type="Timer" parent="."]
 wait_time = 0.5
@@ -93,8 +140,12 @@ collision_layer = 32
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="human_close_to_bird"]
+position = Vector2(0, -6.5)
 position = Vector2(2.08165e-12, -23)
 shape = SubResource("RectangleShape2D_rrut5")
+
+[node name="Running" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rullm")
 
 [node name="ladder_detector" type="Area2D" parent="."]
 collision_layer = 0

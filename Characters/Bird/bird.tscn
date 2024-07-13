@@ -2153,6 +2153,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24e78"]
+size = Vector2(400, 400)
 
 [node name="Bird" type="CharacterBody2D"]
 collision_layer = 0
@@ -2178,9 +2179,9 @@ layer_0/name = "Ground"
 sprite_frames = SubResource("SpriteFrames_3lbl5")
 frame_progress = 0.918565
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
+[node name="bird_close_to_human" type="Area2D" parent="."]
+collision_layer = 64
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bird_close_to_human"]
 shape = SubResource("RectangleShape2D_24e78")

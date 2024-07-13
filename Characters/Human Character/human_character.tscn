@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnhytv3l22cqf"]
+[gd_scene load_steps=9 format=3 uid="uid://bnhytv3l22cqf"]
 
 [ext_resource type="Script" path="res://Characters/Human Character/human character.gd" id="1_vbv80"]
 [ext_resource type="Texture2D" uid="uid://cfpke4wwpd2l4" path="res://Characters/Human Character/icon.svg" id="2_0n20t"]
@@ -42,6 +42,9 @@ _data = {
 "throw_wobble": SubResource("Animation_novnw")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrut5"]
+size = Vector2(300, 175)
+
 [node name="human character" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_vbv80")
@@ -80,5 +83,13 @@ libraries = {
 [node name="rock_throw_cooldown" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="human_close_to_bird" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="human_close_to_bird"]
+position = Vector2(2.08165e-12, -23)
+shape = SubResource("RectangleShape2D_rrut5")
 
 [connection signal="timeout" from="rock_throw_cooldown" to="." method="_on_rock_throw_cooldown_timeout"]

@@ -49,7 +49,9 @@ position = Vector2(-34, 317)
 position = Vector2(-135, 561)
 
 [node name="ladder" parent="." instance=ExtResource("10_6eqgg")]
-position = Vector2(197, 438)
+position = Vector2(225, 263)
+start_position = Vector2(225, 263)
+end_position = Vector2(206, 443)
 
 [node name="window" parent="." instance=ExtResource("7_tyeqv")]
 position = Vector2(1028, 519)

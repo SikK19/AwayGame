@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bs08vpu0ebih"]
+
+[ext_resource type="Texture2D" uid="uid://cfpke4wwpd2l4" path="res://icon.svg" id="1_0fo1g"]
+[ext_resource type="PackedScene" uid="uid://bnhytv3l22cqf" path="res://human_character.tscn" id="2_2t4ff"]
+[ext_resource type="PackedScene" uid="uid://d1dsvu11f3iqa" path="res://interactable.tscn" id="2_pctbg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iarkt"]
+size = Vector2(1140, 57)
+
+[node name="character test enviroment" type="Node2D"]
+
+[node name="interactable" parent="." instance=ExtResource("2_pctbg")]
+position = Vector2(902, 557)
+activated_texture = ExtResource("1_0fo1g")
+unactivated_texture = ExtResource("1_0fo1g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(539, 490)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(35, 127.5)
+shape = SubResource("RectangleShape2D_iarkt")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(31, 127)
+scale = Vector2(8.95313, 0.40625)
+texture = ExtResource("1_0fo1g")
+
+[node name="human character" parent="." instance=ExtResource("2_2t4ff")]
+position = Vector2(437, 294)

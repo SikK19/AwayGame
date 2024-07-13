@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0h05fq00hfnd"]
+
+[ext_resource type="Script" path="res://rock_projectile.gd" id="1_tmy48"]
+[ext_resource type="Texture2D" uid="uid://cfpke4wwpd2l4" path="res://icon.svg" id="2_qjtrc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7d0r7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yu6dn"]
+
+[node name="rock_projectile" type="RigidBody2D"]
+collision_layer = 0
+script = ExtResource("1_tmy48")
+
+[node name="rock_world_collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7d0r7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, 2.38419e-07)
+scale = Vector2(0.109375, 0.140625)
+texture = ExtResource("2_qjtrc")
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="hitbox_shape" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_yu6dn")
+
+[node name="despawnTimer" type="Timer" parent="."]
+wait_time = 4.5
+one_shot = true
+
+[connection signal="sleeping_state_changed" from="." to="." method="_on_sleeping_state_changed"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="despawnTimer" to="." method="_on_despawn_timer_timeout"]

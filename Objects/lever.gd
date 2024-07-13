@@ -4,7 +4,7 @@ extends Area2D
 
 var state = true
 
-func interact():
+func interact(player):
 	if state:
 		$state1.visible = false
 		$state2.visible = true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d5kn5e6p8p3v"]
 
 [ext_resource type="Script" path="res://Objects/lever.gd" id="1_fpvxu"]
-[ext_resource type="Texture2D" uid="uid://cfpke4wwpd2l4" path="res://icon.svg" id="2_rcemh"]
+[ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="2_rcemh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ock80"]
 size = Vector2(82, 223)

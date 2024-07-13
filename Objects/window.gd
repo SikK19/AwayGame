@@ -1,6 +1,6 @@
 extends Area2D
 
-func interact():
+func interact(rock):
 	$window.visible = false
 	$window_broken.visible = true
 	

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Characters/Bird/bird.gd" id="1_dipqb"]
 [ext_resource type="Texture2D" uid="uid://7aom0cyopvia" path="res://Characters/Bird/Assets/BirdSpriteBig.png" id="2_ooqg4"]
-[ext_resource type="Texture2D" uid="uid://cudgdfqhntuqj" path="res://Characters/Bird/Assets/Bird_Idle.PNG" id="2_u1hsm"]
-[ext_resource type="Texture2D" uid="uid://bmk3efafvi77x" path="res://Characters/Bird/Assets/Bird_Flying.PNG" id="3_wxkxx"]
-[ext_resource type="Texture2D" uid="uid://d0s0dt6dekqi7" path="res://Characters/Bird/Assets/Bird_Picking.PNG" id="5_4mqkp"]
+[ext_resource type="Texture2D" path="res://Characters/Bird/Assets/Bird_Idle.PNG" id="2_u1hsm"]
+[ext_resource type="Texture2D" path="res://Characters/Bird/Assets/Bird_Flying.PNG" id="3_wxkxx"]
+[ext_resource type="Texture2D" path="res://Characters/Bird/Assets/Bird_Picking.PNG" id="5_4mqkp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6tbha"]
 size = Vector2(2.8, 3)
@@ -2222,7 +2222,7 @@ animations = [{
 }]
 
 [node name="Bird" type="CharacterBody2D"]
-collision_layer = 64
+collision_layer = 0
 script = ExtResource("1_dipqb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

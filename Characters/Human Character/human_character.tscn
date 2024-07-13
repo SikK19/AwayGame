@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://bnhytv3l22cqf"]
 
 [ext_resource type="Script" path="res://Characters/Human Character/human character.gd" id="1_vbv80"]
-[ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="2_0n20t"]
-[ext_resource type="Texture2D" uid="uid://df28qr6yof5oy" path="res://Characters/Human Character/Char_Idle.PNG" id="2_ixko3"]
-[ext_resource type="Texture2D" uid="uid://c2q5jsbbls6m2" path="res://Characters/Human Character/Char_Running.PNG" id="4_7fbde"]
+[ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="2_0n20t"]
+[ext_resource type="Texture2D" path="res://Characters/Human Character/Char_Idle.PNG" id="2_ixko3"]
+[ext_resource type="Texture2D" path="res://Characters/Human Character/Char_Running.PNG" id="4_7fbde"]
 [ext_resource type="Script" path="res://Characters/Human Character/CameraBirdHuman.gd" id="4_qc14b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_53abq"]

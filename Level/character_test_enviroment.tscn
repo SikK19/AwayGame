@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bs08vpu0ebih"]
+[gd_scene load_steps=10 format=3 uid="uid://bs08vpu0ebih"]
 
 [ext_resource type="PackedScene" uid="uid://bq5uuayncok68" path="res://Objects/button.tscn" id="1_eb4mk"]
 [ext_resource type="PackedScene" uid="uid://d1dsvu11f3iqa" path="res://Objects/interactable.tscn" id="1_qq5yx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="4_t31tm"]
 [ext_resource type="PackedScene" uid="uid://ctilqc6y0uf8b" path="res://Objects/hatch.tscn" id="6_kum8n"]
 [ext_resource type="PackedScene" uid="uid://vg6yk2bkrf2y" path="res://Objects/window.tscn" id="7_tyeqv"]
+[ext_resource type="PackedScene" uid="uid://cya20r6rudmtu" path="res://Objects/ladder.tscn" id="8_fdqcp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iarkt"]
 size = Vector2(1902, 57)
@@ -47,3 +48,6 @@ human = NodePath("../human character")
 
 [node name="window" parent="." instance=ExtResource("7_tyeqv")]
 position = Vector2(1641, 481)
+
+[node name="ladder" parent="." instance=ExtResource("8_fdqcp")]
+position = Vector2(-59, 442)

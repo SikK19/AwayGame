@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi83cumuftq0d"
-path="res://.godot/imported/Groundtiles Bricks.png-7985a64cbed271184beb1ad0bf017555.ctex"
+uid="uid://lshjv0qcil7j"
+path="res://.godot/imported/Char_Idle.PNG-25b9e117a006199882bd776b5997faaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ground Tiles/Bricks/Groundtiles Bricks.png"
-dest_files=["res://.godot/imported/Groundtiles Bricks.png-7985a64cbed271184beb1ad0bf017555.ctex"]
+source_file="res://Characters/Bird/Assets/Char_Idle.PNG"
+dest_files=["res://.godot/imported/Char_Idle.PNG-25b9e117a006199882bd776b5997faaa.ctex"]
 
 [params]
 

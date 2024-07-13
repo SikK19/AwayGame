@@ -2153,15 +2153,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24e78"]
-size = Vector2(400, 400)
+size = Vector2(139.5, 131.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7p08"]
+size = Vector2(150, 150)
 
 [node name="Bird" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_dipqb")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_ooqg4")
 hframes = 2
 region_enabled = true
@@ -2186,6 +2188,7 @@ collision_layer = 64
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bird_close_to_human"]
+position = Vector2(-1.25, -1.75)
 shape = SubResource("RectangleShape2D_24e78")
 
 [node name="interactrange" type="Area2D" parent="."]

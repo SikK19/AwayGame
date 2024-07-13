@@ -15,7 +15,7 @@ var mouse_position = null;
 var direction_flying = null;
 
 func _physics_process(delta):
-	if is_on_character == true:
+	if is_on_character:
 		position.x = human.position.x
 		position.y = human.position.y - 60
 	
@@ -43,11 +43,21 @@ func _physics_process(delta):
 				sprite_standing.flip_h = false
 				sprite_flying.flip_h = false
 				
-	if Input.is_action_just_released("fly_to_cursor"):
-		velocity.x = 0
+	
 		
 	if Input.is_action_just_released("interact") && $interactrange.has_overlapping_areas():
 		$interactrange.get_overlapping_areas()[0].interact(self)
+		
+	if Input.is_action_just_released("fly_to_cursor") && $bird_close_to_human.has_overlapping_areas():
+		print("landing")
+		land_on_character()
+		
+	if Input.is_action_just_released("fly_to_cursor"):
+		velocity.x = 0
+		
+	if is_on_character && Input.is_action_pressed("fly_to_cursor"):
+		is_on_character = false
+		human.is_bird_on_human = false
 
 	move_and_slide()
 	
@@ -55,6 +65,6 @@ func land_on_character():
 	sprite_flying.visible = false
 	sprite_standing.visible = true
 	is_on_character = true
+	human.is_bird_on_human = true
 	
-func fly_away():
-	is_on_character = false
+

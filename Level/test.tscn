@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="3_pbr3i"]
 [ext_resource type="PackedScene" uid="uid://o4sufrciwpyy" path="res://Objects/window.tscn" id="4_1h38l"]
 [ext_resource type="PackedScene" uid="uid://dcnwjpxwaffiq" path="res://Objects/ladder.tscn" id="5_e1byl"]
-[ext_resource type="PackedScene" path="res://Objects/string.tscn" id="6_xrq1v"]
-[ext_resource type="PackedScene" path="res://Objects/door_l.tscn" id="7_p6cpg"]
+[ext_resource type="PackedScene" uid="uid://cuyxkbyvdwq3k" path="res://Objects/string.tscn" id="6_xrq1v"]
+[ext_resource type="PackedScene" uid="uid://btovb3xsv3h8e" path="res://Objects/door_l.tscn" id="7_p6cpg"]
 [ext_resource type="PackedScene" uid="uid://cy0pnhwrhhsiy" path="res://Objects/Key.tscn" id="8_jrvjh"]
 [ext_resource type="PackedScene" uid="uid://ctilqc6y0uf8b" path="res://Objects/hatch.tscn" id="9_d8vbd"]
 [ext_resource type="PackedScene" uid="uid://ccd75n2u05s3h" path="res://Objects/rain.tscn" id="10_yrc4y"]
@@ -90,7 +90,9 @@ position = Vector2(277, -148)
 position = Vector2(747, -159)
 
 [node name="ladder" parent="." instance=ExtResource("5_e1byl")]
-position = Vector2(-351, -162)
+position = Vector2(-352, -163)
+start_position = Vector2(-352, -163)
+end_position = Vector2(-352, -97)
 
 [node name="Key" parent="." instance=ExtResource("8_jrvjh")]
 position = Vector2(452, -178)
@@ -98,8 +100,9 @@ position = Vector2(452, -178)
 [node name="door_L" parent="." instance=ExtResource("7_p6cpg")]
 position = Vector2(-611, -118)
 
-[node name="string" parent="." instance=ExtResource("6_xrq1v")]
+[node name="string" parent="." node_paths=PackedStringArray("connected_objects") instance=ExtResource("6_xrq1v")]
 position = Vector2(-351, -184)
+connected_objects = [NodePath("../ladder")]
 
 [node name="hatch" parent="." instance=ExtResource("9_d8vbd")]
 position = Vector2(-93, -337)

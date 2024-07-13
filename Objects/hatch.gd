@@ -7,7 +7,8 @@ extends Node2D
 func _ready():
 	rotation = deg_to_rad(start_angle)
 
-func activate():
+func activate(state = false):
+	
 	if rotation == deg_to_rad(start_angle):
 		rotation = deg_to_rad(end_angle)
 	else:

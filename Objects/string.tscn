@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://0mlbmrftsqhr"]
+
+[ext_resource type="Script" path="res://string.gd" id="1_is78b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y17hx"]
+
+[node name="string" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_is78b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y17hx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

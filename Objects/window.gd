@@ -1,8 +1,5 @@
 extends Area2D
 
-
-
-
 func interact():
 	$window.visible = false
 	$window_broken.visible = true

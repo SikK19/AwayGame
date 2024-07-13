@@ -1,4 +1,3 @@
-@tool
 extends StaticBody2D
 
 @export var starting_state:bool = true
@@ -7,8 +6,8 @@ func _ready():
 	$TextureRect.visible = starting_state
 	set_collision_layer_value(7,starting_state)
 	
-	$CollisionShape2D.shape.duplicate()
-	
+	$TextureRect.size = $CollisionShape2D.shape.size
+	$TextureRect.position = $CollisionShape2D.position - $CollisionShape2D.shape.size/2
 	
 
 

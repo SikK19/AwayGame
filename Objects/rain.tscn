@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=10 format=3 uid="uid://ccd75n2u05s3h"]
-
+[gd_scene load_steps=10 format=3 uid="uid://rbww1xsoep28"]
 
 [ext_resource type="Script" path="res://Objects/rain.gd" id="1_4leae"]
 [ext_resource type="Texture2D" uid="uid://dbdechhlhfduy" path="res://Objects/Rain effect/rain effect.png" id="2_3ghiu"]

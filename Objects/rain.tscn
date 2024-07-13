@@ -1,64 +1,32 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlivpu42akffh"]
+[gd_scene load_steps=6 format=3 uid="uid://ccd75n2u05s3h"]
 
-[ext_resource type="Script" path="res://Objects/rain.gd" id="1_4leae"]
-[ext_resource type="Texture2D" uid="uid://dbdechhlhfduy" path="res://Objects/Rain effect/rain effect.png" id="2_3ghiu"]
+[ext_resource type="Script" path="res://Objects/rain.gd" id="1_bjv2v"]
+[ext_resource type="Texture2D" uid="uid://bmbdj1ic3vwpe" path="res://Assets/rain/rain_progger_art0000.png" id="1_gl4p3"]
+[ext_resource type="Texture2D" uid="uid://63x2sjki7i1p" path="res://Assets/rain/rain_progger_art0001.png" id="2_g2wti"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pxxuc"]
-atlas = ExtResource("2_3ghiu")
-region = Rect2(0, 0, 50, 50)
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_qfce7"]
+resource_local_to_scene = true
+frames = 2
+frame_0/texture = ExtResource("1_gl4p3")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("2_g2wti")
+frame_1/duration = 0.2
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q8aw1"]
-atlas = ExtResource("2_3ghiu")
-region = Rect2(50, 0, 50, 50)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7hh6"]
+resource_local_to_scene = true
+size = Vector2(32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ror58"]
-atlas = ExtResource("2_3ghiu")
-region = Rect2(100, 0, 50, 50)
+[node name="Rain" type="StaticBody2D"]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("1_bjv2v")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w8naf"]
-atlas = ExtResource("2_3ghiu")
-region = Rect2(150, 0, 50, 50)
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AnimatedTexture_qfce7")
+stretch_mode = 1
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qqwxg"]
-atlas = ExtResource("2_3ghiu")
-region = Rect2(200, 0, 50, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vwd5m"]
-atlas = ExtResource("2_3ghiu")
-region = Rect2(250, 0, 50, 50)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2pcl6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pxxuc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q8aw1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ror58")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w8naf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qqwxg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vwd5m")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[node name="Rain" type="Area2D"]
-collision_layer = 128
-collision_mask = 64
-script = ExtResource("1_4leae")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_2pcl6")
-frame = 1
-frame_progress = 0.347209
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_p7hh6")

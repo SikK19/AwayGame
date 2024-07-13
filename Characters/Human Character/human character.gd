@@ -23,8 +23,12 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_pressed("jump"):
+		#climb ladder if at ladder, jump otherwise
+		if $ladder_detector.get_overlapping_areas().size() > 0:
+			velocity.y = -SPEED
+		elif is_on_floor():
+			velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -56,6 +60,7 @@ func _physics_process(delta):
 			bird.sprite_standing.flip_h = false
 		$"throwing_arm/throwing test sprite".position.x = -93
 		$"throwing_arm/throwing test sprite".position.y = 20
+
 	
 	#play the wobbly arm
 	if Input.is_action_pressed("throw") and can_throw:
@@ -71,6 +76,15 @@ func _physics_process(delta):
 		
 		can_throw = false
 		$rock_throw_cooldown.start()
+		
+	if $human_close_to_bird.has_overlapping_areas() && Input.is_action_just_released("ask_bird_to_land") && not is_bird_on_human:
+		print("trying to land")
+		bird.land_on_character()
+		is_bird_on_human = true
+		
+	if Input.is_action_just_released("ask_bird_to_fly") && is_bird_on_human:
+		bird.fly_away()
+		is_bird_on_human = false
 
 
 func _on_rock_throw_cooldown_timeout():

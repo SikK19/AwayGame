@@ -1,0 +1,124 @@
+[gd_scene load_steps=15 format=3 uid="uid://c61nitnrrktwb"]
+
+[ext_resource type="PackedScene" uid="uid://bnhytv3l22cqf" path="res://Characters/Human Character/human_character.tscn" id="1_ynlki"]
+[ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="2_5mjg1"]
+[ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="3_pbr3i"]
+[ext_resource type="PackedScene" uid="uid://o4sufrciwpyy" path="res://Objects/window.tscn" id="4_1h38l"]
+[ext_resource type="PackedScene" uid="uid://dcnwjpxwaffiq" path="res://Objects/ladder.tscn" id="5_e1byl"]
+[ext_resource type="PackedScene" path="res://Objects/string.tscn" id="6_xrq1v"]
+[ext_resource type="PackedScene" path="res://Objects/door_l.tscn" id="7_p6cpg"]
+[ext_resource type="PackedScene" uid="uid://cy0pnhwrhhsiy" path="res://Objects/Key.tscn" id="8_jrvjh"]
+[ext_resource type="PackedScene" uid="uid://ctilqc6y0uf8b" path="res://Objects/hatch.tscn" id="9_d8vbd"]
+[ext_resource type="PackedScene" uid="uid://ccd75n2u05s3h" path="res://Objects/rain.tscn" id="10_yrc4y"]
+[ext_resource type="PackedScene" uid="uid://bq5uuayncok68" path="res://Objects/button.tscn" id="11_wxs1c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86v3q"]
+size = Vector2(21.2667, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ar232"]
+resource_local_to_scene = true
+size = Vector2(324.5, 312)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_s8lqq"]
+resource_local_to_scene = true
+frames = 2
+frame_0/duration = 0.2
+frame_1/duration = 0.2
+
+[node name="Test" type="Node2D"]
+
+[node name="human character" parent="." node_paths=PackedStringArray("bird") instance=ExtResource("1_ynlki")]
+position = Vector2(-264, 24)
+bird = NodePath("../Bird")
+
+[node name="Bird" parent="." node_paths=PackedStringArray("human") instance=ExtResource("2_5mjg1")]
+position = Vector2(-200, 32)
+human = NodePath("../human character")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1, 77)
+scale = Vector2(10, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3.05474e-06, 0)
+scale = Vector2(6, 6.16)
+shape = SubResource("RectangleShape2D_86v3q")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("3_pbr3i")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-629, -87)
+scale = Vector2(4, 0.1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(3.05474e-06, 0)
+scale = Vector2(6, 6.16)
+shape = SubResource("RectangleShape2D_86v3q")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("3_pbr3i")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(510, -247)
+scale = Vector2(4, 0.1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(3.05474e-06, 0)
+scale = Vector2(6, 6.16)
+shape = SubResource("RectangleShape2D_86v3q")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+texture = ExtResource("3_pbr3i")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(505, -108)
+scale = Vector2(4, 0.1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(3.05474e-06, 0)
+scale = Vector2(6, 6.16)
+shape = SubResource("RectangleShape2D_86v3q")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+texture = ExtResource("3_pbr3i")
+
+[node name="window" parent="." instance=ExtResource("4_1h38l")]
+position = Vector2(277, -148)
+
+[node name="window2" parent="." instance=ExtResource("4_1h38l")]
+position = Vector2(747, -159)
+
+[node name="ladder" parent="." instance=ExtResource("5_e1byl")]
+position = Vector2(-351, -162)
+
+[node name="Key" parent="." instance=ExtResource("8_jrvjh")]
+position = Vector2(452, -178)
+
+[node name="door_L" parent="." instance=ExtResource("7_p6cpg")]
+position = Vector2(-611, -118)
+
+[node name="string" parent="." instance=ExtResource("6_xrq1v")]
+position = Vector2(-351, -184)
+
+[node name="hatch" parent="." instance=ExtResource("9_d8vbd")]
+position = Vector2(-93, -337)
+start_angle = 90
+end_angle = 0
+
+[node name="Rain" parent="." instance=ExtResource("10_yrc4y")]
+position = Vector2(-89, -336)
+
+[node name="CollisionShape2D" parent="Rain" index="0"]
+position = Vector2(145, 169)
+shape = SubResource("RectangleShape2D_ar232")
+
+[node name="rain" parent="Rain" index="1"]
+visible = true
+texture = SubResource("AnimatedTexture_s8lqq")
+
+[node name="button" parent="." node_paths=PackedStringArray("conected_objects") instance=ExtResource("11_wxs1c")]
+position = Vector2(-529, 5)
+conected_objects = [NodePath("../hatch"), NodePath("../Rain")]
+
+[editable path="Rain"]

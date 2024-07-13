@@ -2222,9 +2222,7 @@ animations = [{
 }]
 
 [node name="Bird" type="CharacterBody2D"]
-
 collision_layer = 64
-
 collision_mask = 65
 script = ExtResource("1_dipqb")
 

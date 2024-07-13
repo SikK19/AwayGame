@@ -9,6 +9,8 @@ func _ready():
 	$rain.size = $CollisionShape2D.shape.size
 	$rain.position = $CollisionShape2D.position - $CollisionShape2D.shape.size / 2
 	
-	
+func activate():
+	$CollisionShape2D.disabled = not $CollisionShape2D.disabled
+	$rain.visible = not $rain.visible
 	
 

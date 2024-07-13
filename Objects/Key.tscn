@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dm2dsfgr6qjmb"]
 
-[ext_resource type="Script" path="res://Objects/Key.gd" id="1_6cs4v"]
+[ext_resource type="Script" path="res://Objects/key.gd" id="1_6cs4v"]
 [ext_resource type="Texture2D" uid="uid://cy5etkxos4305" path="res://Objects/pixel-art-key/key-blue.png" id="2_wdjkm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqe4h"]
@@ -109,4 +109,4 @@ shape = SubResource("RectangleShape2D_mqe4h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3cejp")
-frame_progress = 0.718919
+frame_progress = 0.795688

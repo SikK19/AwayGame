@@ -77,7 +77,7 @@ func _physics_process(delta):
 		is_on_character = false
 		human.is_bird_on_human = false
 		
-	if $interactrange.has_overlapping_areas() && Input.is_action_pressed("bird_interact"):
+	if $interactrange.has_overlapping_areas() && Input.is_action_just_pressed("bird_interact"):
 		$interactrange.get_overlapping_areas()[0].interact(self)
 		
 	if has_key && $bird_close_to_human.has_overlapping_areas():

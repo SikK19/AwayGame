@@ -5,7 +5,7 @@ extends StaticBody2D
 
 func _ready():
 	$CollisionShape2D.disabled = active
-	$rain.visible = active
+	#$rain.visible = active
 	
 	$rain.size = $CollisionShape2D.shape.size
 	$rain.position = $CollisionShape2D.position - $CollisionShape2D.shape.size / 2

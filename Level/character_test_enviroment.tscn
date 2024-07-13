@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bs08vpu0ebih"]
+[gd_scene load_steps=10 format=3 uid="uid://bs08vpu0ebih"]
 
 [ext_resource type="PackedScene" path="res://Objects/button.tscn" id="1_eb4mk"]
 [ext_resource type="PackedScene" uid="uid://d1dsvu11f3iqa" path="res://Objects/interactable.tscn" id="1_qq5yx"]
@@ -7,15 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="4_t31tm"]
 [ext_resource type="PackedScene" path="res://Objects/hatch.tscn" id="6_kum8n"]
 [ext_resource type="PackedScene" uid="uid://o4sufrciwpyy" path="res://Objects/window.tscn" id="7_tyeqv"]
-[ext_resource type="PackedScene" uid="uid://dm2dsfgr6qjmb" path="res://Objects/key.tscn" id="8_h42w7"]
-[ext_resource type="PackedScene" uid="uid://dlivpu42akffh" path="res://Objects/rain.tscn" id="9_vjx0s"]
+[ext_resource type="PackedScene" uid="uid://dm2dsfgr6qjmb" path="res://Objects/Key.tscn" id="8_h42w7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iarkt"]
 size = Vector2(1902, 57)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_31xw8"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a67dy"]
 
 [node name="character test enviroment" type="Node2D"]
 
@@ -46,8 +41,7 @@ position = Vector2(437, 294)
 bird = NodePath("../Bird")
 
 [node name="Bird" parent="." node_paths=PackedStringArray("human") instance=ExtResource("4_t31tm")]
-position = Vector2(800, 223)
-scale = Vector2(0.5, 0.5)
+position = Vector2(800, 331)
 human = NodePath("../human character")
 
 [node name="window" parent="." instance=ExtResource("7_tyeqv")]
@@ -55,32 +49,3 @@ position = Vector2(1641, 481)
 
 [node name="Key" parent="." instance=ExtResource("8_h42w7")]
 position = Vector2(-34, 317)
-scale = Vector2(2, 2)
-
-[node name="Rain" parent="." node_paths=PackedStringArray("area_left", "area_right", "bird") instance=ExtResource("9_vjx0s")]
-position = Vector2(1260, 380)
-scale = Vector2(1, 12)
-area_left = NodePath("area_rain1_left")
-area_right = NodePath("area_rain1_right")
-bird = NodePath("../Bird")
-
-[node name="area_rain1_left" type="Area2D" parent="Rain"]
-position = Vector2(54, 0)
-scale = Vector2(1, 0.0833333)
-collision_layer = 128
-collision_mask = 64
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rain/area_rain1_left"]
-scale = Vector2(3, 20)
-shape = SubResource("RectangleShape2D_31xw8")
-
-[node name="area_rain1_right" type="Area2D" parent="Rain"]
-position = Vector2(59, -10.8333)
-scale = Vector2(1, 0.0833333)
-collision_layer = 128
-collision_mask = 64
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rain/area_rain1_right"]
-position = Vector2(-111, 131)
-scale = Vector2(3, 20)
-shape = SubResource("RectangleShape2D_a67dy")

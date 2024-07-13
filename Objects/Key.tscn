@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dm2dsfgr6qjmb"]
+[gd_scene load_steps=18 format=3 uid="uid://dm2dsfgr6qjmb"]
 
 [ext_resource type="Script" path="res://Objects/key.gd" id="1_6cs4v"]
 [ext_resource type="Texture2D" uid="uid://cy5etkxos4305" path="res://Objects/pixel-art-key/key-blue.png" id="2_wdjkm"]
@@ -54,6 +54,10 @@ region = Rect2(320, 0, 32, 32)
 atlas = ExtResource("2_wdjkm")
 region = Rect2(352, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeqi7"]
+atlas = ExtResource("2_wdjkm")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_3cejp"]
 animations = [{
 "frames": [{
@@ -92,6 +96,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c4fxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yeqi7")
 }],
 "loop": true,
 "name": &"default",

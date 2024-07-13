@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eu1hldx2slbu"
-path="res://.godot/imported/Groundtiles Bricks Right Inner Edge.png-30d8a694f17973d244acee3739d1e525.ctex"
+uid="uid://b7o2qymqr2udd"
+path="res://.godot/imported/key-white.png-f8b3747bb215be80be85a1f4cfb33379.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ground Tiles/Bricks/Groundtiles Bricks Right Inner Edge.png"
-dest_files=["res://.godot/imported/Groundtiles Bricks Right Inner Edge.png-30d8a694f17973d244acee3739d1e525.ctex"]
+source_file="res://Objects/pixel-art-key/key-white.png"
+dest_files=["res://.godot/imported/key-white.png-f8b3747bb215be80be85a1f4cfb33379.ctex"]
 
 [params]
 

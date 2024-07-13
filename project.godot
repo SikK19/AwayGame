@@ -17,8 +17,6 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
 window/stretch/scale=2.0
 
 [input]
@@ -68,7 +66,7 @@ bird_interact={
 2d_physics/layer_5="bird-interactable"
 2d_physics/layer_6="human"
 2d_physics/layer_7="bird"
-2d_physics/layer_8="rain"
+2d_physics/layer_8="ladder"
 
 [rendering]
 

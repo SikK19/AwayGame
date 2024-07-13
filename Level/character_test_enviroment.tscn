@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bs08vpu0ebih"]
+[gd_scene load_steps=12 format=3 uid="uid://bs08vpu0ebih"]
 
 [ext_resource type="PackedScene" uid="uid://bq5uuayncok68" path="res://Objects/button.tscn" id="1_eb4mk"]
 [ext_resource type="PackedScene" uid="uid://d1dsvu11f3iqa" path="res://Objects/interactable.tscn" id="1_qq5yx"]
@@ -8,31 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://ctilqc6y0uf8b" path="res://Objects/hatch.tscn" id="6_kum8n"]
 [ext_resource type="PackedScene" uid="uid://vg6yk2bkrf2y" path="res://Objects/window.tscn" id="7_tyeqv"]
 [ext_resource type="PackedScene" path="res://Objects/Key.tscn" id="8_h42w7"]
-[ext_resource type="PackedScene" uid="uid://ccd75n2u05s3h" path="res://Objects/rain.tscn" id="9_e3fuo"]
 [ext_resource type="PackedScene" uid="uid://dwy3g8sthn1kw" path="res://Objects/door_r.tscn" id="9_wjbmo"]
+[ext_resource type="PackedScene" uid="uid://dcnwjpxwaffiq" path="res://Objects/ladder.tscn" id="10_6eqgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iarkt"]
 size = Vector2(1902, 57)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vv06f"]
-resource_local_to_scene = true
-size = Vector2(372, 214)
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_uamn2"]
-resource_local_to_scene = true
-frames = 2
-frame_0/duration = 0.2
-frame_1/duration = 0.2
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad881"]
-resource_local_to_scene = true
-size = Vector2(175, 249.5)
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_23e80"]
-resource_local_to_scene = true
-frames = 2
-frame_0/duration = 0.2
-frame_1/duration = 0.2
 
 [node name="character test enviroment" type="Node2D"]
 
@@ -44,7 +24,7 @@ position = Vector2(620, 403)
 
 [node name="button" parent="." node_paths=PackedStringArray("conected_objects") instance=ExtResource("1_eb4mk")]
 position = Vector2(89, 527)
-conected_objects = [NodePath("../hatch")]
+conected_objects = [NodePath("../hatch"), NodePath("../ladder")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(539, 490)
@@ -72,28 +52,8 @@ position = Vector2(1641, 481)
 [node name="Key" parent="." instance=ExtResource("8_h42w7")]
 position = Vector2(-34, 317)
 
-[node name="Rain2" parent="." instance=ExtResource("9_e3fuo")]
-position = Vector2(583, 88)
-
-[node name="CollisionShape2D" parent="Rain2" index="0"]
-position = Vector2(176, 97)
-shape = SubResource("RectangleShape2D_vv06f")
-
-[node name="rain" parent="Rain2" index="1"]
-texture = SubResource("AnimatedTexture_uamn2")
-
-[node name="Rain" parent="." instance=ExtResource("9_e3fuo")]
-position = Vector2(-328, 292)
-
-[node name="CollisionShape2D" parent="Rain" index="0"]
-position = Vector2(262.5, 122.25)
-shape = SubResource("RectangleShape2D_ad881")
-
-[node name="rain" parent="Rain" index="1"]
-texture = SubResource("AnimatedTexture_23e80")
-
 [node name="door_R" parent="." instance=ExtResource("9_wjbmo")]
 position = Vector2(-135, 561)
 
-[editable path="Rain2"]
-[editable path="Rain"]
+[node name="ladder" parent="." instance=ExtResource("10_6eqgg")]
+position = Vector2(1, 438)

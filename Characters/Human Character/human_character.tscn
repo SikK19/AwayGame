@@ -109,6 +109,7 @@ sprite_frames = SubResource("SpriteFrames_0i8kp")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8phdw")
+debug_color = Color(0.921238, 0.162698, 0.567678, 0.42)
 
 [node name="interact box" type="Area2D" parent="."]
 collision_layer = 0
@@ -150,7 +151,7 @@ position = Vector2(-2, 0)
 sprite_frames = SubResource("SpriteFrames_rullm")
 
 [node name="ladder detector" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 32
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ladder detector"]

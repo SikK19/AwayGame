@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bs08vpu0ebih"]
+[gd_scene load_steps=11 format=3 uid="uid://bs08vpu0ebih"]
 
 [ext_resource type="PackedScene" uid="uid://bq5uuayncok68" path="res://Objects/button.tscn" id="1_eb4mk"]
-[ext_resource type="PackedScene" uid="uid://d1dsvu11f3iqa" path="res://Objects/interactable.tscn" id="1_qq5yx"]
 [ext_resource type="PackedScene" uid="uid://bnhytv3l22cqf" path="res://Characters/Human Character/human_character.tscn" id="3_y8kq6"]
 [ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="4_5aiah"]
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="4_t31tm"]
@@ -15,9 +14,6 @@
 size = Vector2(1902, 57)
 
 [node name="character test enviroment" type="Node2D"]
-
-[node name="interactable" parent="." instance=ExtResource("1_qq5yx")]
-position = Vector2(902, 557)
 
 [node name="hatch" parent="." instance=ExtResource("6_kum8n")]
 position = Vector2(620, 403)
@@ -46,9 +42,6 @@ bird = NodePath("../Bird")
 position = Vector2(800, 331)
 human = NodePath("../human character")
 
-[node name="window" parent="." instance=ExtResource("7_tyeqv")]
-position = Vector2(1641, 481)
-
 [node name="Key" parent="." instance=ExtResource("8_h42w7")]
 position = Vector2(-34, 317)
 
@@ -56,4 +49,7 @@ position = Vector2(-34, 317)
 position = Vector2(-135, 561)
 
 [node name="ladder" parent="." instance=ExtResource("10_6eqgg")]
-position = Vector2(1, 438)
+position = Vector2(-374, 395)
+
+[node name="window" parent="." instance=ExtResource("7_tyeqv")]
+position = Vector2(1028, 519)

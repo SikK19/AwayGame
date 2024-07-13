@@ -45,8 +45,7 @@ bird = NodePath("../Bird")
 position = Vector2(800, 223)
 scale = Vector2(0.5, 0.5)
 SPEED = 400.0
-
+human = NodePath("../human character")
 
 [node name="window" parent="." instance=ExtResource("7_tyeqv")]
 position = Vector2(1641, 481)
-

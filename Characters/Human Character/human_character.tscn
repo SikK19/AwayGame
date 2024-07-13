@@ -43,7 +43,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrut5"]
-size = Vector2(96, 57)
+size = Vector2(300, 175)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xhmg"]
 size = Vector2(23, 113)
@@ -93,7 +93,7 @@ collision_layer = 32
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="human_close_to_bird"]
-position = Vector2(3, -35.5)
+position = Vector2(2.08165e-12, -23)
 shape = SubResource("RectangleShape2D_rrut5")
 
 [node name="ladder_detector" type="Area2D" parent="."]

@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Characters/Human Character/human character.gd" id="1_vbv80"]
 [ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="2_0n20t"]
-[ext_resource type="Texture2D" path="res://Characters/Human Character/Char_Idle.PNG" id="2_ixko3"]
-[ext_resource type="Texture2D" path="res://Characters/Human Character/Char_Running.PNG" id="4_7fbde"]
+[ext_resource type="Texture2D" uid="uid://df28qr6yof5oy" path="res://Characters/Human Character/Char_Idle.PNG" id="2_ixko3"]
+[ext_resource type="Texture2D" uid="uid://c2q5jsbbls6m2" path="res://Characters/Human Character/Char_Running.PNG" id="4_7fbde"]
 [ext_resource type="Script" path="res://Characters/Human Character/CameraBirdHuman.gd" id="4_qc14b"]
-[ext_resource type="Texture2D" uid="uid://cw4aeoelk1kue" path="res://Characters/Human Character/Char_Climbing.PNG" id="5_wdysx"]
-[ext_resource type="Texture2D" uid="uid://c3w1imhloa7s5" path="res://Characters/Human Character/Char_Jumping.PNG" id="6_53nt3"]
+[ext_resource type="Texture2D" path="res://Characters/Human Character/Char_Climbing.PNG" id="5_wdysx"]
+[ext_resource type="Texture2D" path="res://Characters/Human Character/Char_Jumping.PNG" id="6_53nt3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8phdw"]
 size = Vector2(24, 32)
@@ -148,6 +148,7 @@ animations = [{
 
 [node name="human character" type="CharacterBody2D"]
 collision_layer = 0
+collision_mask = 33
 script = ExtResource("1_vbv80")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]

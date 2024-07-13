@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdrlvcbkxhf3m"]
+
+[ext_resource type="Script" path="res://Level/main.gd" id="1_w3fwn"]
+[ext_resource type="PackedScene" uid="uid://875a7xduhdf3" path="res://UI/PauseMenu.tscn" id="2_wig82"]
+[ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="3_jkrli"]
+[ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="4_8cxgi"]
+[ext_resource type="PackedScene" uid="uid://bnhytv3l22cqf" path="res://Characters/Human Character/human_character.tscn" id="5_7gm1g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ekgc"]
+size = Vector2(265.143, 126)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_w3fwn")
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_wig82")]
+visible = false
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 695.0
+offset_top = 427.0
+offset_right = 695.0
+offset_bottom = 427.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(961.75, 1016)
+scale = Vector2(7.27344, 1)
+shape = SubResource("RectangleShape2D_2ekgc")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(0.0214834, 2)
+scale = Vector2(2.06894, 1)
+texture = ExtResource("3_jkrli")
+
+[node name="human character" parent="." instance=ExtResource("5_7gm1g")]
+position = Vector2(186, 846)
+
+[node name="Bird" parent="." node_paths=PackedStringArray("human") instance=ExtResource("4_8cxgi")]
+position = Vector2(944, 722)
+human = NodePath("../human character")

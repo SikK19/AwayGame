@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="4_t31tm"]
 [ext_resource type="PackedScene" uid="uid://ctilqc6y0uf8b" path="res://Objects/hatch.tscn" id="6_kum8n"]
 [ext_resource type="PackedScene" uid="uid://vg6yk2bkrf2y" path="res://Objects/window.tscn" id="7_tyeqv"]
-[ext_resource type="PackedScene" uid="uid://cya20r6rudmtu" path="res://Objects/ladder.tscn" id="8_fdqcp"]
+[ext_resource type="PackedScene" uid="uid://c4xk8gg716cyc" path="res://Objects/ladder.tscn" id="8_fdqcp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iarkt"]
 size = Vector2(1902, 57)
@@ -22,7 +22,7 @@ position = Vector2(620, 403)
 
 [node name="button" parent="." node_paths=PackedStringArray("conected_objects") instance=ExtResource("1_eb4mk")]
 position = Vector2(89, 527)
-conected_objects = [NodePath("../hatch")]
+conected_objects = [NodePath("../hatch"), NodePath("../ladder")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(539, 490)
@@ -50,4 +50,4 @@ human = NodePath("../human character")
 position = Vector2(1641, 481)
 
 [node name="ladder" parent="." instance=ExtResource("8_fdqcp")]
-position = Vector2(-59, 442)
+position = Vector2(-121, 235)

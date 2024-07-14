@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cwu0d7abg8uyp"
+path="res://.godot/imported/Drifting apart.wav-981ecab2eef6b8620a21b876c36b9c70.sample"
+
+[deps]
+
+source_file="res://Sounds/Drifting apart.wav"
+dest_files=["res://.godot/imported/Drifting apart.wav-981ecab2eef6b8620a21b876c36b9c70.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

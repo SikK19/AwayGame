@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b7efbhadoeod6"]
+[gd_scene load_steps=19 format=3 uid="uid://b7efbhadoeod6"]
 
 [ext_resource type="Texture2D" uid="uid://bagrshmbnrr4j" path="res://Assets/Ground Tiles/Ground Spritesheet.png" id="1_83s3y"]
 [ext_resource type="Texture2D" uid="uid://cnwh0nvdt7soa" path="res://Assets/Background/Indoor Background Tile.png" id="2_aqhwr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dnv48jokjbodd" path="res://Objects/door_l.tscn" id="4_0wy7t"]
 [ext_resource type="PackedScene" uid="uid://c7nolv3mqb43q" path="res://Level/building blocks/wall_big.tscn" id="4_ldbyf"]
 [ext_resource type="Script" path="res://Level/danger zone.gd" id="4_sk4gh"]
+[ext_resource type="PackedScene" uid="uid://o4sufrciwpyy" path="res://Objects/window.tscn" id="5_07v86"]
 [ext_resource type="PackedScene" uid="uid://bnhytv3l22cqf" path="res://Characters/Human Character/human_character.tscn" id="5_o1jgg"]
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="6_3k5nu"]
 [ext_resource type="PackedScene" uid="uid://cy0pnhwrhhsiy" path="res://Objects/Key.tscn" id="6_j5rns"]
@@ -106,6 +107,9 @@ scale = Vector2(0.5, 1)
 start_angle = 90
 end_angle = 270
 
+[node name="window" parent="walls" instance=ExtResource("5_07v86")]
+position = Vector2(162, 162)
+
 [node name="interactables" type="Node2D" parent="."]
 
 [node name="door_L" parent="interactables" instance=ExtResource("4_0wy7t")]
@@ -150,11 +154,11 @@ position = Vector2(1378, 107)
 shape = SubResource("RectangleShape2D_qfrbk")
 
 [node name="human character" parent="." node_paths=PackedStringArray("bird") instance=ExtResource("5_o1jgg")]
-position = Vector2(673, 72)
+position = Vector2(256, 190)
 bird = NodePath("../Bird")
 
 [node name="Bird" parent="." node_paths=PackedStringArray("human") instance=ExtResource("6_3k5nu")]
-position = Vector2(645, 76)
+position = Vector2(228, 187)
 collision_mask = 81
 human = NodePath("../human character")
 

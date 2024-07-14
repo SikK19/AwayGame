@@ -1,0 +1,12 @@
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://0y3pe0q7pfuw"]
+
+[ext_resource type="Texture2D" uid="uid://bthaes5yh5ey1" path="res://Assets/Background/rain/rain0000.png" id="1_2d5pw"]
+[ext_resource type="Texture2D" uid="uid://i4fgbkffkbxw" path="res://Assets/Background/rain/rain0001.png" id="2_osep6"]
+
+[resource]
+resource_local_to_scene = true
+frames = 2
+frame_0/texture = ExtResource("1_2d5pw")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_osep6")
+frame_1/duration = 0.1

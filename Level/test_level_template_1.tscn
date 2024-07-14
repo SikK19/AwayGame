@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b7efbhadoeod6"]
+[gd_scene load_steps=21 format=3 uid="uid://b7efbhadoeod6"]
 
 [ext_resource type="Texture2D" uid="uid://bagrshmbnrr4j" path="res://Assets/Ground Tiles/Ground Spritesheet.png" id="1_83s3y"]
 [ext_resource type="Texture2D" uid="uid://cnwh0nvdt7soa" path="res://Assets/Background/Indoor Background Tile.png" id="2_aqhwr"]
@@ -13,16 +13,20 @@
 [ext_resource type="PackedScene" uid="uid://dwy3g8sthn1kw" path="res://Objects/door_r.tscn" id="6_ubboq"]
 [ext_resource type="PackedScene" uid="uid://bq5uuayncok68" path="res://Objects/button.tscn" id="7_x3gxo"]
 [ext_resource type="PackedScene" uid="uid://ccd75n2u05s3h" path="res://Objects/rain.tscn" id="8_4jngn"]
+[ext_resource type="Texture2D" uid="uid://bthaes5yh5ey1" path="res://Assets/Background/rain/rain0000.png" id="9_0utey"]
+[ext_resource type="Texture2D" uid="uid://i4fgbkffkbxw" path="res://Assets/Background/rain/rain0001.png" id="10_k18ms"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uy88t"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2h4c"]
 resource_local_to_scene = true
-size = Vector2(220, 231)
+size = Vector2(231, 267)
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_x30cw"]
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_lntqj"]
 resource_local_to_scene = true
 frames = 2
-frame_0/duration = 0.2
-frame_1/duration = 0.2
+frame_0/texture = ExtResource("9_0utey")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("10_k18ms")
+frame_1/duration = 0.1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3fkp1"]
 texture = ExtResource("1_83s3y")
@@ -125,19 +129,19 @@ position = Vector2(973, -98)
 
 [node name="button" parent="interactables" node_paths=PackedStringArray("conected_objects") instance=ExtResource("7_x3gxo")]
 position = Vector2(145, 200)
-conected_objects = [NodePath("../Rain")]
-
-[node name="Rain" parent="interactables" instance=ExtResource("8_4jngn")]
-position = Vector2(251, 33)
-
-[node name="CollisionShape2D" parent="interactables/Rain" index="0"]
-position = Vector2(85, 90.5)
-shape = SubResource("RectangleShape2D_uy88t")
-
-[node name="rain" parent="interactables/Rain" index="1"]
-texture = SubResource("AnimatedTexture_x30cw")
+conected_objects = [NodePath("../../rain_zones/Rain")]
 
 [node name="rain_zones" type="Node2D" parent="."]
+
+[node name="Rain" parent="rain_zones" instance=ExtResource("8_4jngn")]
+position = Vector2(239, 30)
+
+[node name="CollisionShape2D" parent="rain_zones/Rain" index="0"]
+position = Vector2(90.5, 108.5)
+shape = SubResource("RectangleShape2D_s2h4c")
+
+[node name="rain" parent="rain_zones/Rain" index="1"]
+texture = SubResource("AnimatedTexture_lntqj")
 
 [node name="foreground" type="Node2D" parent="."]
 
@@ -171,4 +175,4 @@ human = NodePath("../human character")
 
 [connection signal="body_entered" from="danger zone" to="danger zone" method="_on_body_entered"]
 
-[editable path="interactables/Rain"]
+[editable path="rain_zones/Rain"]

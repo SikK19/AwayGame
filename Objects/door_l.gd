@@ -1,16 +1,40 @@
 extends Area2D
 
+var is_open = false
+@export var locked = false
 
-func interact(player):
-	
-	
-	if player.has_key:
-		$door.play("default")
-		$StaticBody2D/CollisionShape2D.disabled = true
-		#$StaticBody2D.queue_free()
-		set_collision_layer_value(4, false)
-		#TODO: add remove key function to player, to change the animation
-		player.loose_key()
+func activate(_state = false):
+	if is_open:
+		close()
 	else:
-		pass
-		#TODO: sound feedback
+		open()
+
+func interact(player):	
+	if is_open:
+		close()
+	elif (player.has_key || !locked ) && not is_open:	
+		open()
+		player.loose_key()
+		locked = false
+	
+		
+func open():
+	$door.play("open")
+	if !$SoundOpenDoor.playing:
+		$SoundOpenDoor.play()
+	$StaticBody2D/CollisionShape2D.disabled = true
+	#$StaticBody2D.queue_free()
+	set_collision_layer_value(4, false)
+	is_open = true
+	
+func close():
+	$door.play("close")
+	var time_in_seconds = 0.5
+	await get_tree().create_timer(time_in_seconds).timeout
+	if !$SoundCloseDoor.playing:
+		$SoundCloseDoor.play()
+	$StaticBody2D/CollisionShape2D.disabled = false
+	#$StaticBody2D.queue_free()
+	set_collision_layer_value(4, true)
+	is_open = false
+	

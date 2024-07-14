@@ -5,13 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="3_pbr3i"]
 [ext_resource type="PackedScene" uid="uid://o4sufrciwpyy" path="res://Objects/window.tscn" id="4_1h38l"]
 [ext_resource type="PackedScene" uid="uid://dcnwjpxwaffiq" path="res://Objects/ladder.tscn" id="5_e1byl"]
-[ext_resource type="PackedScene" path="res://Objects/string.tscn" id="6_xrq1v"]
-[ext_resource type="PackedScene" path="res://Objects/door_l.tscn" id="7_p6cpg"]
+[ext_resource type="PackedScene" uid="uid://cuyxkbyvdwq3k" path="res://Objects/string.tscn" id="6_xrq1v"]
+[ext_resource type="PackedScene" uid="uid://dnv48jokjbodd" path="res://Objects/door_l.tscn" id="7_p6cpg"]
 [ext_resource type="PackedScene" uid="uid://cy0pnhwrhhsiy" path="res://Objects/Key.tscn" id="8_jrvjh"]
 [ext_resource type="PackedScene" uid="uid://ctilqc6y0uf8b" path="res://Objects/hatch.tscn" id="9_d8vbd"]
 [ext_resource type="PackedScene" uid="uid://ccd75n2u05s3h" path="res://Objects/rain.tscn" id="10_yrc4y"]
 [ext_resource type="PackedScene" uid="uid://bq5uuayncok68" path="res://Objects/button.tscn" id="11_wxs1c"]
-[ext_resource type="PackedScene" path="res://Objects/lever.tscn" id="12_v3q23"]
+[ext_resource type="PackedScene" uid="uid://e8ns0e3b6oom" path="res://Objects/lever.tscn" id="12_v3q23"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86v3q"]
 size = Vector2(21.2667, 20)
@@ -107,8 +107,6 @@ connected_objects = [NodePath("../ladder")]
 
 [node name="hatch" parent="." instance=ExtResource("9_d8vbd")]
 position = Vector2(-93, -337)
-start_angle = 90
-end_angle = 0
 
 [node name="Rain" parent="." instance=ExtResource("10_yrc4y")]
 position = Vector2(-89, -336)

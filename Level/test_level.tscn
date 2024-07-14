@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmfudn0jsem2i"]
+[gd_scene load_steps=5 format=3 uid="uid://mpui4y73r1ox"]
 
 [ext_resource type="Texture2D" uid="uid://bek2y6vuo431f" path="res://TestAssets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_vkdxj"]
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="2_x2r7w"]

@@ -1,16 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0451ef625a34"]
+[gd_scene load_steps=15 format=3 uid="uid://b7efbhadoeod6"]
 
 [ext_resource type="Texture2D" uid="uid://bagrshmbnrr4j" path="res://Assets/Ground Tiles/Ground Spritesheet.png" id="1_83s3y"]
 [ext_resource type="Texture2D" uid="uid://cnwh0nvdt7soa" path="res://Assets/Background/Indoor Background Tile.png" id="2_aqhwr"]
 [ext_resource type="PackedScene" uid="uid://4np5bu4mq4ei" path="res://Level/building blocks/wall_medium.tscn" id="3_usx8o"]
 [ext_resource type="Texture2D" uid="uid://clb4jahmxx8b0" path="res://Assets/Ground Tiles/Groundtiles Rock.png" id="3_y04bs"]
-[ext_resource type="PackedScene" uid="uid://btovb3xsv3h8e" path="res://Objects/door_l.tscn" id="4_0wy7t"]
+[ext_resource type="PackedScene" path="res://Objects/door_l.tscn" id="4_0wy7t"]
 [ext_resource type="PackedScene" uid="uid://c7nolv3mqb43q" path="res://Level/building blocks/wall_big.tscn" id="4_ldbyf"]
 [ext_resource type="Script" path="res://Level/danger zone.gd" id="4_sk4gh"]
 [ext_resource type="PackedScene" uid="uid://bnhytv3l22cqf" path="res://Characters/Human Character/human_character.tscn" id="5_o1jgg"]
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="6_3k5nu"]
 [ext_resource type="PackedScene" uid="uid://cy0pnhwrhhsiy" path="res://Objects/Key.tscn" id="6_j5rns"]
-[ext_resource type="PackedScene" uid="uid://dwy3g8sthn1kw" path="res://Objects/door_r.tscn" id="6_ubboq"]
+[ext_resource type="PackedScene" path="res://Objects/door_r.tscn" id="6_ubboq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3fkp1"]
 texture = ExtResource("1_83s3y")

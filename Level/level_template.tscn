@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgyosswwmqwab"]
+[gd_scene load_steps=9 format=3 uid="uid://cflgrqe27rhlt"]
 
 [ext_resource type="Texture2D" uid="uid://bagrshmbnrr4j" path="res://Assets/Ground Tiles/Ground Spritesheet.png" id="1_x8heg"]
 [ext_resource type="Texture2D" uid="uid://clb4jahmxx8b0" path="res://Assets/Ground Tiles/Groundtiles Rock.png" id="2_c5sws"]

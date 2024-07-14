@@ -4,14 +4,12 @@ extends Area2D
 
 var state = true
 
-func interact(player):
+func interact(_player):
 	if state:
-		$state1.visible = false
-		$state2.visible = true
+		$AnimatedSprite2D.play("state1")
 		state = false
 	else:
-		$state1.visible = true
-		$state2.visible = false
+		$AnimatedSprite2D.play("state2")
 		state = true
 	
 	for o in conected_objects:

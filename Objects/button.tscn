@@ -1,10 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://bq5uuayncok68"]
 
-[ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="1_ae3xv"]
 [ext_resource type="Script" path="res://Objects/button.gd" id="1_uxqqu"]
+[ext_resource type="Texture2D" uid="uid://comx6k8k3h7rq" path="res://Assets/Interactives/Button Spritesheet.png" id="2_qm1kt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5kub"]
-size = Vector2(55, 67)
 
 [node name="button" type="Area2D"]
 collision_layer = 28
@@ -12,11 +11,9 @@ collision_mask = 0
 script = ExtResource("1_uxqqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.5, 6.5)
 shape = SubResource("RectangleShape2D_l5kub")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.766836, 0, 0.0192716, 1)
-position = Vector2(3.5, 6.5)
-scale = Vector2(0.414063, 0.492188)
-texture = ExtResource("1_ae3xv")
+texture = ExtResource("2_qm1kt")
+region_enabled = true
+region_rect = Rect2(0, 0, 13, 19)

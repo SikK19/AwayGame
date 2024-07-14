@@ -4,7 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2a28i"]
 resource_local_to_scene = true
-size = Vector2(93, 246)
+size = Vector2(50, 50)
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_e6wtx"]
 resource_local_to_scene = true
@@ -18,11 +18,9 @@ collision_mask = 64
 script = ExtResource("1_4leae")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(221.5, 120.5)
 shape = SubResource("RectangleShape2D_2a28i")
 
 [node name="rain" type="TextureRect" parent="."]
-visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = SubResource("AnimatedTexture_e6wtx")

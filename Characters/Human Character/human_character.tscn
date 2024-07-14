@@ -180,7 +180,7 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("human")]
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(2, 2)
 script = ExtResource("4_qc14b")
 human = NodePath("..")
 

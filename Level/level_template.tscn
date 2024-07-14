@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://cflgrqe27rhlt"]
+
+[ext_resource type="Texture2D" uid="uid://bagrshmbnrr4j" path="res://Assets/Ground Tiles/Ground Spritesheet.png" id="1_x8heg"]
+[ext_resource type="Texture2D" uid="uid://clb4jahmxx8b0" path="res://Assets/Ground Tiles/Groundtiles Rock.png" id="2_c5sws"]
+[ext_resource type="Script" path="res://Level/danger zone.gd" id="2_khead"]
+[ext_resource type="Texture2D" uid="uid://cnwh0nvdt7soa" path="res://Assets/Background/Indoor Background Tile.png" id="2_vjxev"]
+[ext_resource type="PackedScene" uid="uid://bnhytv3l22cqf" path="res://Characters/Human Character/human_character.tscn" id="5_7aqt4"]
+[ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="6_0hvbl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3fkp1"]
+texture = ExtResource("1_x8heg")
+texture_region_size = Vector2i(64, 48)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 24, -32, 24)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 24, -32, 24)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-27.5772, -24, 32, -24, 32, 24, -32, 24, -26.5, 15.25)
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -24, 27, -24, 25.75, 16, 32, 24, -32, 24)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 24, -32, 24)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 24, -32, 24)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -24, -32, -24, 32, 24, -32, 24)
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -24, 32, -24, 32, 24, -32, 24)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 24, -32, 24)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 24, -32, 24)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 24, -32, 24)
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -24, -17.75, -18.25, -0.5, -13.25, 16.75, -18.25, 32, -24, 32, 24, -32, 24)
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 24, -32, 24)
+
+[sub_resource type="TileSet" id="TileSet_1nk3d"]
+tile_size = Vector2i(64, 48)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_3fkp1")
+
+[node name="Level template" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_1nk3d")
+format = 2
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="indoor_background" type="TextureRect" parent="background"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_vjxev")
+stretch_mode = 1
+
+[node name="walls" type="Node2D" parent="."]
+
+[node name="interactables" type="Node2D" parent="."]
+
+[node name="rain_zones" type="Node2D" parent="."]
+
+[node name="foreground" type="Node2D" parent="."]
+
+[node name="ground filler" type="Node2D" parent="."]
+
+[node name="GroundtilesRock" type="Sprite2D" parent="ground filler"]
+position = Vector2(0, 500)
+texture = ExtResource("2_c5sws")
+
+[node name="danger zone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 96
+script = ExtResource("2_khead")
+
+[node name="human character" parent="." node_paths=PackedStringArray("bird") instance=ExtResource("5_7aqt4")]
+bird = NodePath("../Bird")
+
+[node name="Bird" parent="." node_paths=PackedStringArray("human") instance=ExtResource("6_0hvbl")]
+human = NodePath("../human character")
+
+[connection signal="body_entered" from="danger zone" to="danger zone" method="_on_body_entered"]

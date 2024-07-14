@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dgmpc6gjyuou2"]
 
-[ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="1_bclxs"]
+[ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="1_bclxs"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -9,15 +9,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="Key" type="TextureRect" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 81.0
-offset_top = -145.0
-offset_right = 165.0
-offset_bottom = -59.0
-grow_vertical = 0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Key" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
 texture = ExtResource("1_bclxs")

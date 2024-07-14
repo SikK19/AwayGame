@@ -21,6 +21,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	$Camera2D.bird = bird
+	$key_sprite.play("default")
 
 func _physics_process(delta):
 	if (velocity.x > 0 || velocity.x < 0) && velocity.y == 0:
@@ -99,6 +100,9 @@ func _on_rock_throw_cooldown_timeout():
 func loose_key():
 	has_key = false
 	#TODO: Ui updaten
+
+func get_key():
+	has_key = true
 
 func damage():
 	print("human damaged")

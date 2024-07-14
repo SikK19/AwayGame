@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b7efbhadoeod6"]
+[gd_scene load_steps=22 format=3 uid="uid://b7efbhadoeod6"]
 
 [ext_resource type="Texture2D" uid="uid://bagrshmbnrr4j" path="res://Assets/Ground Tiles/Ground Spritesheet.png" id="1_83s3y"]
 [ext_resource type="Texture2D" uid="uid://cnwh0nvdt7soa" path="res://Assets/Background/Indoor Background Tile.png" id="2_aqhwr"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bou8v0s6ai0di" path="res://Objects/door_r.tscn" id="6_ubboq"]
 [ext_resource type="PackedScene" uid="uid://bq5uuayncok68" path="res://Objects/button.tscn" id="7_x3gxo"]
 [ext_resource type="PackedScene" uid="uid://ccd75n2u05s3h" path="res://Objects/rain.tscn" id="8_4jngn"]
+[ext_resource type="PackedScene" uid="uid://e8ns0e3b6oom" path="res://Objects/lever.tscn" id="8_ts71h"]
 [ext_resource type="Texture2D" uid="uid://bthaes5yh5ey1" path="res://Assets/Background/rain/rain0000.png" id="9_0utey"]
 [ext_resource type="Texture2D" uid="uid://i4fgbkffkbxw" path="res://Assets/Background/rain/rain0001.png" id="10_k18ms"]
 
@@ -122,14 +123,15 @@ position = Vector2(728, 70)
 position = Vector2(1045, 70)
 
 [node name="Key" parent="interactables" instance=ExtResource("6_j5rns")]
-position = Vector2(618, 48)
-
-[node name="Key2" parent="interactables" instance=ExtResource("6_j5rns")]
-position = Vector2(973, -98)
+position = Vector2(985, -79)
 
 [node name="button" parent="interactables" node_paths=PackedStringArray("conected_objects") instance=ExtResource("7_x3gxo")]
 position = Vector2(145, 200)
 conected_objects = [NodePath("../../rain_zones/Rain")]
+
+[node name="lever" parent="interactables" node_paths=PackedStringArray("conected_objects") instance=ExtResource("8_ts71h")]
+position = Vector2(625, 85)
+conected_objects = [NodePath("../door_L")]
 
 [node name="rain_zones" type="Node2D" parent="."]
 

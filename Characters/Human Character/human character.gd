@@ -28,7 +28,6 @@ func _physics_process(delta):
 		if !$Footsteps.playing:
 			$Footsteps.pitch_scale = randf_range(0.7, 1.3)
 			$Footsteps.play()
-			print("footstep played")
 	if velocity == Vector2(0,0):
 		animations.play("Idle")
 	if velocity.y > 0 && not is_climbing:

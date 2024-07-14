@@ -113,7 +113,7 @@ frame_1/duration = 0.1
 resource_local_to_scene = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tehrv"]
-size = Vector2(702, 37)
+size = Vector2(64, 59)
 
 [node name="Level1" type="Node2D"]
 
@@ -439,8 +439,16 @@ script = ExtResource("23_ngix3")
 position = Vector2(-341, 8.5)
 shape = SubResource("RectangleShape2D_tehrv")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(1065, 97.5)
+shape = SubResource("RectangleShape2D_tehrv")
+
 [node name="Sprite2D" type="Sprite2D" parent="DeathZone"]
 position = Vector2(-19, 6)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D23" type="Sprite2D" parent="DeathZone"]
+position = Vector2(1066, 102)
 texture = ExtResource("24_dvuvl")
 
 [node name="Sprite2D2" type="Sprite2D" parent="DeathZone"]

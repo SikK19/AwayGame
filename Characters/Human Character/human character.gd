@@ -9,18 +9,20 @@ var has_key = false
 var is_climbing = false
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -200.0
 
 @export var bird:Node2D
 var is_bird_on_human = false
 
 @onready var animations = $Animations
 
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	$Camera2D.bird = bird
+	$key_sprite.play("default")
 
 func _physics_process(delta):
 	if (velocity.x > 0 || velocity.x < 0) && velocity.y == 0:
@@ -80,11 +82,16 @@ func _physics_process(delta):
 	
 	#play the wobbly arm
 	if Input.is_action_pressed("throw") and can_throw:
+		$"throwing_arm/throwing test sprite".visible = true
+		$"throwing_arm/throwing test sprite".play("default")
 		$throwing_arm/AnimationPlayer.play("throw_wobble")
 	if Input.is_action_just_released("throw") and $throwing_arm/AnimationPlayer.is_playing():
 		#create a new rock scene, throw it in the direction of the player is currently aiming in
 		var rock = rock_scene.instantiate()
+		rock.set_frame($"throwing_arm/throwing test sprite".get_frame())
 		get_parent().add_child(rock)
+		$"throwing_arm/throwing test sprite".visible = false
+		$"throwing_arm/throwing test sprite".stop()
 		rock.global_position = $throwing_arm.global_position
 		rock.linear_velocity = Vector2(throw_force * facing_direction,0).rotated($throwing_arm.rotation * facing_direction)
 		
@@ -98,7 +105,11 @@ func _on_rock_throw_cooldown_timeout():
 
 func loose_key():
 	has_key = false
-	#TODO: Ui updaten
+	$key_sprite.visible = false
+
+func get_key():
+	has_key = true
+	$key_sprite.visible = true
 
 func damage():
 	print("human damaged")

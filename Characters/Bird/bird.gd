@@ -56,7 +56,6 @@ func _physics_process(delta):
 	mouse_position = get_global_mouse_position()
 	if Input.is_action_pressed("fly_to_cursor") && not is_on_character:
 		if (global_position - mouse_position).length() < 1:
-			print("here")
 			velocity = Vector2(0,0)
 		else:
 			direction_flying = (mouse_position - position).normalized()	
@@ -86,7 +85,7 @@ func _physics_process(delta):
 		$interactrange.get_overlapping_areas()[0].interact(self)
 		
 	if has_key && $bird_close_to_human.has_overlapping_areas():
-		human.has_key = true;
+		human.get_key()
 		has_key = false;
 
 	move_and_slide()

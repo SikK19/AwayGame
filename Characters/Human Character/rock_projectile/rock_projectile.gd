@@ -13,3 +13,6 @@ func _on_sleeping_state_changed():
 
 func _on_despawn_timer_timeout():
 	self.queue_free()
+	
+func set_frame(frame):
+	$Sprite2D.frame = frame

@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://byby2akjxouhm"]
+
+[ext_resource type="Texture2D" uid="uid://dsyiyynsk5v1p" path="res://Assets/Interactives/Throwing Stone Spritesheet.png" id="1_pmuie"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdb0v"]
+atlas = ExtResource("1_pmuie")
+region = Rect2(0, 0, 5, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etxxw"]
+atlas = ExtResource("1_pmuie")
+region = Rect2(5, 0, 5, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v8sk"]
+atlas = ExtResource("1_pmuie")
+region = Rect2(10, 0, 5, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw5a6"]
+atlas = ExtResource("1_pmuie")
+region = Rect2(15, 0, 5, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3qa2"]
+atlas = ExtResource("1_pmuie")
+region = Rect2(20, 0, 5, 5)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdb0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etxxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v8sk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kw5a6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3qa2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

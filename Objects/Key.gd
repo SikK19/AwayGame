@@ -9,6 +9,9 @@ func _process(_delta):
 	pass
 
 func interact(body):
+	if !$PickupKey.playing:
+		print("playing Key sound")
+		$PickupKey.play()
 	body.take_key()
 	if body.has_key:
 		print("Key taken")

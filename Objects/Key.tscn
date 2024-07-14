@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://Objects/key.gd" id="1_6cs4v"]
 [ext_resource type="Texture2D" uid="uid://cy5etkxos4305" path="res://Objects/pixel-art-key/key-blue.png" id="2_wdjkm"]
+[ext_resource type="AudioStream" uid="uid://d1xkpoeanruvw" path="res://Sounds/PickupKey.wav" id="3_a20h6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqe4h"]
 size = Vector2(13, 28)
@@ -130,3 +131,7 @@ position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_ach1q")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+
+[node name="PickupKey" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_a20h6")
+

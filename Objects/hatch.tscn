@@ -1,19 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctilqc6y0uf8b"]
+[gd_scene load_steps=5 format=3 uid="uid://ctilqc6y0uf8b"]
 
 [ext_resource type="Script" path="res://Objects/hatch.gd" id="1_xaocd"]
-[ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="2_vvb8f"]
+
+[ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="2_vvb8f"]
+[ext_resource type="AudioStream" uid="uid://cf8k45btlmici" path="res://Sounds/CREAK_Metal_Heavy_mono.wav" id="3_4lqlk"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mp7kw"]
-size = Vector2(318, 20)
+size = Vector2(315, 16)
 
 [node name="hatch" type="StaticBody2D"]
+rotation = 1.5708
 script = ExtResource("1_xaocd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(149, 0)
+position = Vector2(150.5, -1)
 shape = SubResource("RectangleShape2D_mp7kw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(150, 1.5)
+position = Vector2(150, -1)
 scale = Vector2(2.48438, 0.132813)
 texture = ExtResource("2_vvb8f")
+
+[node name="MovingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_4lqlk")

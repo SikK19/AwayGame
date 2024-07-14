@@ -11,16 +11,19 @@ config_version=5
 [application]
 
 config/name="AwayGame"
-run/main_scene="res://Level/test.tscn"
+run/main_scene="res://Level/test_level_template_1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 run/layer_8=""
+run/size/viewport_height=648
+run/size/viewport_width=1152
 
 [display]
 
 window/size/viewport_width=2500
 window/size/viewport_height=1750
 window/size/mode=2
+window/stretch/scale=2.0
 
 [input]
 

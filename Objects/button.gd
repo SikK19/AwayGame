@@ -4,5 +4,8 @@ extends Area2D
 
 
 func interact(_player):
+	$Button_Sound_Player.play()
 	for o in conected_objects:
 		o.activate()
+	
+	

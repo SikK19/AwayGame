@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bl7036g41ale"]
+[gd_scene load_steps=41 format=3 uid="uid://bl7036g41ale"]
 
 [ext_resource type="Texture2D" uid="uid://cnwh0nvdt7soa" path="res://Assets/Background/Indoor Background Tile.png" id="1_8t1yi"]
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="1_iqvb5"]
@@ -20,8 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://bthaes5yh5ey1" path="res://Assets/Background/rain/rain0000.png" id="13_rpy2v"]
 [ext_resource type="PackedScene" uid="uid://c7nolv3mqb43q" path="res://Level/building blocks/wall_big.tscn" id="14_8ddea"]
 [ext_resource type="Texture2D" uid="uid://i4fgbkffkbxw" path="res://Assets/Background/rain/rain0001.png" id="14_sf4cv"]
+[ext_resource type="Texture2D" uid="uid://d1vq4ed246a0y" path="res://Assets/Main Layer/Flat Roof.png" id="15_bth4k"]
 [ext_resource type="Texture2D" uid="uid://blrutty37wi3g" path="res://Assets/Main Layer/Roof Spritesheet.png" id="18_s1cbm"]
 [ext_resource type="AudioStream" uid="uid://cwu0d7abg8uyp" path="res://Sounds/Drifting apart.wav" id="20_ymyjy"]
+[ext_resource type="Script" path="res://Level/danger zone.gd" id="23_ngix3"]
+[ext_resource type="Texture2D" uid="uid://dfp0gdcnkrjhi" path="res://Assets/Forground/Spike Spritesheet.png" id="24_dvuvl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7jk8y"]
 atlas = ExtResource("3_2jyov")
@@ -71,9 +74,12 @@ frame_0/duration = 0.1
 frame_1/texture = ExtResource("14_sf4cv")
 frame_1/duration = 0.1
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ge6u"]
+resource_local_to_scene = true
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rd05t"]
 resource_local_to_scene = true
-size = Vector2(2014, 129)
+size = Vector2(2308, 129)
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_hqvdq"]
 resource_local_to_scene = true
@@ -82,6 +88,27 @@ frame_0/texture = ExtResource("13_rpy2v")
 frame_0/duration = 0.1
 frame_1/texture = ExtResource("14_sf4cv")
 frame_1/duration = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ixp2"]
+resource_local_to_scene = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yde77"]
+resource_local_to_scene = true
+size = Vector2(707, 313)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_wy8or"]
+resource_local_to_scene = true
+frames = 2
+frame_0/texture = ExtResource("13_rpy2v")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("14_sf4cv")
+frame_1/duration = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57can"]
+resource_local_to_scene = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tehrv"]
+size = Vector2(702, 37)
 
 [node name="Level1" type="Node2D"]
 
@@ -186,22 +213,11 @@ position = Vector2(-33, 54)
 [node name="wall medium10" parent="Walls" instance=ExtResource("3_n36oo")]
 position = Vector2(-133, -9)
 
-[node name="wall medium17" parent="Walls" instance=ExtResource("3_n36oo")]
-position = Vector2(30, -9)
-
 [node name="wall medium18" parent="Walls" instance=ExtResource("3_n36oo")]
-position = Vector2(30, -73)
+position = Vector2(30, -66)
 
 [node name="wall medium11" parent="Walls" instance=ExtResource("3_n36oo")]
 position = Vector2(-133, -73)
-
-[node name="wall medium4" parent="Walls" instance=ExtResource("3_n36oo")]
-position = Vector2(-289, 27)
-rotation = 1.5708
-
-[node name="wall medium7" parent="Walls" instance=ExtResource("3_n36oo")]
-position = Vector2(-289, 83)
-rotation = 1.5708
 
 [node name="wall medium8" parent="Walls" instance=ExtResource("3_n36oo")]
 position = Vector2(-226, -100)
@@ -221,18 +237,6 @@ rotation = 1.5708
 
 [node name="wall medium15" parent="Walls" instance=ExtResource("3_n36oo")]
 position = Vector2(2, -100)
-rotation = 1.5708
-
-[node name="wall medium16" parent="Walls" instance=ExtResource("3_n36oo")]
-position = Vector2(3, 27)
-rotation = 1.5708
-
-[node name="wall medium5" parent="Walls" instance=ExtResource("3_n36oo")]
-position = Vector2(-225, 27)
-rotation = 1.5708
-
-[node name="wall medium6" parent="Walls" instance=ExtResource("3_n36oo")]
-position = Vector2(-161, 27)
 rotation = 1.5708
 
 [node name="wall small" parent="Walls" instance=ExtResource("6_nu3dv")]
@@ -265,6 +269,29 @@ position = Vector2(-629, 22)
 
 [node name="wall medium" parent="Walls" instance=ExtResource("3_n36oo")]
 position = Vector2(-629, -73)
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls"]
+position = Vector2(-289, 27)
+texture = ExtResource("15_bth4k")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Walls"]
+position = Vector2(-290, 83)
+texture = ExtResource("15_bth4k")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Walls"]
+position = Vector2(-225, 27)
+texture = ExtResource("15_bth4k")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Walls"]
+position = Vector2(-161, 27)
+texture = ExtResource("15_bth4k")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Walls"]
+position = Vector2(2, 27)
+texture = ExtResource("15_bth4k")
+
+[node name="wall medium17" parent="Walls" instance=ExtResource("3_n36oo")]
+position = Vector2(30, -2)
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -306,15 +333,34 @@ offset_right = 64.0
 offset_bottom = 64.0
 texture = SubResource("AnimatedTexture_52we5")
 
+[node name="CollisionShape2D" parent="Rain/Rain/damage_box" index="0"]
+shape = SubResource("RectangleShape2D_4ge6u")
+
 [node name="Rain2" parent="Rain" instance=ExtResource("12_1ivao")]
 position = Vector2(-112, -210)
 
 [node name="CollisionShape2D" parent="Rain/Rain2" index="0"]
-position = Vector2(71, 40)
+position = Vector2(-76, 40)
 shape = SubResource("RectangleShape2D_rd05t")
 
 [node name="rain" parent="Rain/Rain2" index="1"]
 texture = SubResource("AnimatedTexture_hqvdq")
+
+[node name="CollisionShape2D" parent="Rain/Rain2/damage_box" index="0"]
+shape = SubResource("RectangleShape2D_7ixp2")
+
+[node name="Rain3" parent="Rain" instance=ExtResource("12_1ivao")]
+position = Vector2(-1317, -81)
+
+[node name="CollisionShape2D" parent="Rain/Rain3" index="0"]
+position = Vector2(328.5, 131.5)
+shape = SubResource("RectangleShape2D_yde77")
+
+[node name="rain" parent="Rain/Rain3" index="1"]
+texture = SubResource("AnimatedTexture_wy8or")
+
+[node name="CollisionShape2D" parent="Rain/Rain3/damage_box" index="0"]
+shape = SubResource("RectangleShape2D_57can")
 
 [node name="Traps" type="Node2D" parent="."]
 
@@ -325,7 +371,7 @@ texture_repeat = 2
 position = Vector2(-231, -126)
 scale = Vector2(0.97856, 1.08108)
 texture = ExtResource("18_s1cbm")
-polygon = PackedVector2Array(-416.939, 19.425, 107.787, 16.65, 108.809, 48.1, -418.983, 49.025)
+polygon = PackedVector2Array(-416, 20, 107, 20, 107, 48, -416, 48)
 
 [node name="Polygon2D2" type="Polygon2D" parent="Roof"]
 texture_repeat = 2
@@ -343,8 +389,111 @@ layer_0/tile_data = PackedInt32Array(262138, 0, 0, 262139, 65536, 0, 262140, 0, 
 stream = ExtResource("20_ymyjy")
 autoplay = true
 
+[node name="DeathZone" type="Area2D" parent="."]
+position = Vector2(-650, 186)
+collision_layer = 0
+collision_mask = 768
+script = ExtResource("23_ngix3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(-341, 8.5)
+shape = SubResource("RectangleShape2D_tehrv")
+
+[node name="Sprite2D" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-19, 6)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-83, 6)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-150, 6)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D4" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-212, 6)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D5" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-279, 8)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D6" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-333, 8)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D7" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-308, 8)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D8" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-246, 10)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D9" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-192, 5)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D10" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-130, 8)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D11" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-53, 5)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D12" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-10, 5)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D13" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-362, 8)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D14" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-394, 8)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D15" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-429, 8)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D16" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-464, 8)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D17" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-494, 8)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D18" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-533, 8)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D19" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-565, 5)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D20" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-594, 9)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D21" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-628, 9)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D22" type="Sprite2D" parent="DeathZone"]
+position = Vector2(-662, 7)
+texture = ExtResource("24_dvuvl")
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]
+
 [editable path="human character"]
 [editable path="Doors/door_L"]
 [editable path="Doors/door_R"]
 [editable path="Rain/Rain"]
 [editable path="Rain/Rain2"]
+[editable path="Rain/Rain3"]

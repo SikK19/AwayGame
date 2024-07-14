@@ -12,4 +12,4 @@ func _process(delta):
 
 
 func _on_timer_timeout():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Level/Level_1.tscn")

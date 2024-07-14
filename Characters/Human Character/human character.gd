@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var rock_scene = load("res://Characters/Human Character/rock_projectile/rock_projectile.tscn")
-var throw_force = 1000
+var throw_force = 750
 var can_throw = true
 
 var facing_direction = 1
@@ -71,20 +71,25 @@ func _physics_process(delta):
 		animations.flip_h = false
 		if is_bird_on_human:
 			bird.sprite_idle.flip_h = false
-		$"throwing_arm/throwing test sprite".position.x = 93
-		$"throwing_arm/throwing test sprite".position.y = -2
+		#$"throwing_arm/throwing test sprite".position.x = 45
+		
+		#$"throwing_arm/throwing test sprite".position.y = -2
 	if direction < 0:
 		animations.flip_h = true
 		if is_bird_on_human:
 			bird.sprite_idle.flip_h = true
-		$"throwing_arm/throwing test sprite".position.x = -93
-		$"throwing_arm/throwing test sprite".position.y = 20
+		#$"throwing_arm/throwing test sprite".position.x = -45
+		
+		#$"throwing_arm/throwing test sprite".position.y = 20
 	
 	#play the wobbly arm
 	if Input.is_action_pressed("throw") and can_throw:
 		$"throwing_arm/throwing test sprite".visible = true
 		$"throwing_arm/throwing test sprite".play("default")
-		$throwing_arm/AnimationPlayer.play("throw_wobble")
+		if not animations.flip_h:
+			$throwing_arm/AnimationPlayer.play("throw_wobble")
+		else:
+			$throwing_arm/AnimationPlayer.play("throw_wobble_flipped")
 	if Input.is_action_just_released("throw") and $throwing_arm/AnimationPlayer.is_playing():
 		#create a new rock scene, throw it in the direction of the player is currently aiming in
 		var rock = rock_scene.instantiate()
@@ -93,7 +98,7 @@ func _physics_process(delta):
 		$"throwing_arm/throwing test sprite".visible = false
 		$"throwing_arm/throwing test sprite".stop()
 		rock.global_position = $throwing_arm.global_position
-		rock.linear_velocity = Vector2(throw_force * facing_direction,0).rotated($throwing_arm.rotation * facing_direction)
+		rock.linear_velocity = Vector2(throw_force ,0).rotated($throwing_arm.rotation)
 		
 		$throwing_arm/AnimationPlayer.stop()
 		

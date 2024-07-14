@@ -99,5 +99,5 @@ func loose_key():
 
 func damage():
 	print("human damaged")
-	#TODO: do something when damage is taken, for example restart the level
+	get_tree().call_deferred("reload_current_scene")
 

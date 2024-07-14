@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://bnhytv3l22cqf"]
 
 [ext_resource type="Script" path="res://Characters/Human Character/human character.gd" id="1_vbv80"]
-[ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="2_0n20t"]
+[ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="2_0n20t"]
 [ext_resource type="Texture2D" uid="uid://df28qr6yof5oy" path="res://Characters/Human Character/Char_Idle.PNG" id="2_ixko3"]
 [ext_resource type="Texture2D" uid="uid://c2q5jsbbls6m2" path="res://Characters/Human Character/Char_Running.PNG" id="4_7fbde"]
 [ext_resource type="Script" path="res://Characters/Human Character/CameraBirdHuman.gd" id="4_qc14b"]
@@ -151,7 +151,7 @@ radius = 12.0
 height = 36.0
 
 [node name="human character" type="CharacterBody2D"]
-collision_layer = 32
+collision_layer = 544
 collision_mask = 33
 script = ExtResource("1_vbv80")
 
@@ -208,4 +208,3 @@ collision_mask = 128
 shape = SubResource("CapsuleShape2D_v1ss8")
 
 [connection signal="timeout" from="rock_throw_cooldown" to="." method="_on_rock_throw_cooldown_timeout"]
-[connection signal="area_entered" from="ladder detector" to="." method="_on_ladder_detector_area_entered"]

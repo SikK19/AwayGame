@@ -102,13 +102,13 @@ position = Vector2(1045, -26)
 position = Vector2(883, -26)
 
 [node name="hatch" parent="walls" instance=ExtResource("13_lke4e")]
-position = Vector2(303, 139)
+position = Vector2(292, -18)
 scale = Vector2(0.5, 1)
 start_angle = 90
 end_angle = 270
 
 [node name="window" parent="walls" instance=ExtResource("5_07v86")]
-position = Vector2(162, 162)
+position = Vector2(116, -20)
 
 [node name="interactables" type="Node2D" parent="."]
 
@@ -154,7 +154,7 @@ position = Vector2(1378, 107)
 shape = SubResource("RectangleShape2D_qfrbk")
 
 [node name="human character" parent="." node_paths=PackedStringArray("bird") instance=ExtResource("5_o1jgg")]
-position = Vector2(256, 190)
+position = Vector2(277, 208)
 bird = NodePath("../Bird")
 
 [node name="Bird" parent="." node_paths=PackedStringArray("human") instance=ExtResource("6_3k5nu")]

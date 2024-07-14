@@ -2153,7 +2153,7 @@ animations = [{
 size = Vector2(139.5, 131.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7p08"]
-size = Vector2(20, 19)
+size = Vector2(150, 150)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8ls5"]
 
@@ -2255,11 +2255,11 @@ position = Vector2(-1.25, -1.75)
 shape = SubResource("RectangleShape2D_24e78")
 
 [node name="interactrange" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactrange"]
-position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_d7p08")
 
 [node name="bird_close_to_rain" type="Area2D" parent="."]

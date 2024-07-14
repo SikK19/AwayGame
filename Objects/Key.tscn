@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cy0pnhwrhhsiy"]
+[gd_scene load_steps=19 format=3 uid="uid://cy0pnhwrhhsiy"]
 
 [ext_resource type="Script" path="res://Objects/key.gd" id="1_6cs4v"]
 [ext_resource type="Texture2D" uid="uid://cy5etkxos4305" path="res://Objects/pixel-art-key/key-blue.png" id="2_wdjkm"]
@@ -105,6 +105,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ach1q"]
+size = Vector2(13, 28)
+
 [node name="Key" type="Area2D"]
 collision_layer = 20
 collision_mask = 96
@@ -117,3 +120,13 @@ shape = SubResource("RectangleShape2D_mqe4h")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3cejp")
 frame_progress = 0.795688
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_ach1q")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

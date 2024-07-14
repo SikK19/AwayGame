@@ -135,6 +135,7 @@ animation = &"open"
 speed_scale = 0.8
 
 [node name="door_frame" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
 texture = ExtResource("3_qq281")
 region_enabled = true
 region_rect = Rect2(33, 0, 23, 59)

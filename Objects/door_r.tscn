@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Objects/door_l.gd" id="1_akdw5"]
 [ext_resource type="Texture2D" uid="uid://cn0me305jp8d5" path="res://Assets/Interactives/Door.png" id="2_s3dpo"]
 [ext_resource type="Texture2D" uid="uid://bvvqrxx8jhbu3" path="res://Assets/Forground/Doorframe Right.png" id="3_lv811"]
-[ext_resource type="AudioStream" uid="uid://cf0gb06lqongi" path="res://Sounds/Objects/OpenDoor.wav" id="4_l0phb"]
-[ext_resource type="AudioStream" uid="uid://des7jm1nu3170" path="res://Sounds/Objects/CloseDoor.wav" id="5_oe0bo"]
+[ext_resource type="AudioStream" uid="uid://cf0gb06lqongi" path="res://Sounds/Objects/UsedSounds/OpenDoor.wav" id="4_l0phb"]
+[ext_resource type="AudioStream" uid="uid://des7jm1nu3170" path="res://Sounds/Objects/UsedSounds/CloseDoor.wav" id="5_oe0bo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uosnv"]
 atlas = ExtResource("2_s3dpo")

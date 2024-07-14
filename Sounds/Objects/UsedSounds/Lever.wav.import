@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://ckhsx10ki6f2m"
-path="res://.godot/imported/Button.wav-959e9ff27ef4e25800dcc89295335200.sample"
+uid="uid://rkoyd1cme0jk"
+path="res://.godot/imported/Lever.wav-3f835be36987b008a3a71581e670dacb.sample"
 
 [deps]
 
-source_file="res://Sounds/Objects/Button.wav"
-dest_files=["res://.godot/imported/Button.wav-959e9ff27ef4e25800dcc89295335200.sample"]
+source_file="res://Sounds/Objects/UsedSounds/Lever.wav"
+dest_files=["res://.godot/imported/Lever.wav-3f835be36987b008a3a71581e670dacb.sample"]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Objects/button.gd" id="1_uxqqu"]
 [ext_resource type="Texture2D" uid="uid://comx6k8k3h7rq" path="res://Assets/Interactives/Button Spritesheet.png" id="2_qm1kt"]
-[ext_resource type="AudioStream" uid="uid://ckhsx10ki6f2m" path="res://Sounds/Objects/Button.wav" id="3_h4gk5"]
+[ext_resource type="AudioStream" uid="uid://ckhsx10ki6f2m" path="res://Sounds/Objects/UsedSounds/Button.wav" id="3_h4gk5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5kub"]
 

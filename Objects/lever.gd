@@ -5,6 +5,7 @@ extends Area2D
 var state = true
 
 func interact(_player):
+	$PushLever.play()
 	if state:
 		$AnimatedSprite2D.play("state1")
 		state = false

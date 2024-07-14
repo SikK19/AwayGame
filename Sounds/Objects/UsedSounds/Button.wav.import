@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://des7jm1nu3170"
-path="res://.godot/imported/CloseDoor.wav-b48f6db9b1d90dd127cf3774ed665db9.sample"
+uid="uid://ckhsx10ki6f2m"
+path="res://.godot/imported/Button.wav-57c15084b1dfe4c00b9907b42e92f71d.sample"
 
 [deps]
 
-source_file="res://Sounds/Objects/CloseDoor.wav"
-dest_files=["res://.godot/imported/CloseDoor.wav-b48f6db9b1d90dd127cf3774ed665db9.sample"]
+source_file="res://Sounds/Objects/UsedSounds/Button.wav"
+dest_files=["res://.godot/imported/Button.wav-57c15084b1dfe4c00b9907b42e92f71d.sample"]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="1_6jxe2"]
 [ext_resource type="Script" path="res://Objects/window.gd" id="1_pngfv"]
-[ext_resource type="AudioStream" uid="uid://cv3s6a1jk7bif" path="res://Sounds/Objects/GLASS_Window_Break_06_mono.wav" id="3_ywfu2"]
+[ext_resource type="AudioStream" uid="uid://cv3s6a1jk7bif" path="res://Sounds/Objects/UsedSounds/WindowShattering.wav" id="3_qc3ip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hb3db"]
 size = Vector2(44, 192)
@@ -37,6 +37,6 @@ position = Vector2(-4.5, -28)
 shape = SubResource("RectangleShape2D_hb3db")
 
 [node name="ShatterGlass" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_ywfu2")
+stream = ExtResource("3_qc3ip")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

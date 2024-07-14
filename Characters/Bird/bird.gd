@@ -95,4 +95,4 @@ func take_key():
 
 func damage():
 	print("bird damaged")
-	#TODO: do something when taking damage
+	get_tree().call_deferred("reload_current_scene")

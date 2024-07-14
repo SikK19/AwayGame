@@ -1,8 +1,11 @@
 extends StaticBody2D
 
 @export var active:bool = true
+var rain_text = preload("res://Assets/Background/rain/rain_anim_texture.tres")
 
 func _ready():
+	$rain.texture = rain_text
+	
 	$CollisionShape2D.set_deferred("disabled", not active)
 	$rain.visible = active
 	
@@ -13,10 +16,11 @@ func _ready():
 	$damage_box/CollisionShape2D.shape.size = $CollisionShape2D.shape.size * 0.9
 	$damage_box/CollisionShape2D.set_deferred("disabled", not active)
 	
+	
 func activate():
 	$CollisionShape2D.set_deferred("disabled", not $CollisionShape2D.disabled)
 	$damage_box/CollisionShape2D.set_deferred("disabled", not $damage_box/CollisionShape2D.disabled)
-	print($rain.visible)
 	$rain.visible = not $rain.visible
-	print($rain.visible)
-
+	
+	
+	

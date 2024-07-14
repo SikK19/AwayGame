@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cuyxkbyvdwq3k"]
+[gd_scene load_steps=4 format=3 uid="uid://cuyxkbyvdwq3k"]
 
 [ext_resource type="Script" path="res://Objects/string.gd" id="1_is78b"]
+[ext_resource type="Texture2D" uid="uid://c423cqcf1l081" path="res://Assets/Interactives/rope.png" id="2_4j14p"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_y17hx"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8f4hq"]
+height = 42.0
 
 [node name="string" type="Area2D"]
 collision_layer = 16
@@ -10,6 +12,12 @@ collision_mask = 0
 script = ExtResource("1_is78b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_y17hx")
+shape = SubResource("CapsuleShape2D_8f4hq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="string_full" type="Sprite2D" parent="."]
+texture = ExtResource("2_4j14p")
+region_enabled = true
+region_rect = Rect2(0, 0, 6, 36)
+
+[node name="string_cut" type="Sprite2D" parent="."]
+visible = false

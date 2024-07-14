@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cf0gb06lqongi"
-path="res://.godot/imported/CREAK_Door_11_mono.wav-006f805c198a5c9adae214c30399a284.sample"
+path="res://.godot/imported/OpenDoor.wav-4eda8f6eb5af3962d4fcaaa46a1ba63f.sample"
 
 [deps]
 
-source_file="res://Sounds/Objects/CREAK_Door_11_mono.wav"
-dest_files=["res://.godot/imported/CREAK_Door_11_mono.wav-006f805c198a5c9adae214c30399a284.sample"]
+source_file="res://Sounds/Objects/OpenDoor.wav"
+dest_files=["res://.godot/imported/OpenDoor.wav-4eda8f6eb5af3962d4fcaaa46a1ba63f.sample"]
 
 [params]
 

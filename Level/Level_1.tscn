@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bl7036g41ale"]
+[gd_scene load_steps=20 format=3 uid="uid://bl7036g41ale"]
 
 [ext_resource type="Texture2D" uid="uid://cnwh0nvdt7soa" path="res://Assets/Background/Indoor Background Tile.png" id="1_8t1yi"]
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="1_iqvb5"]
@@ -7,8 +7,28 @@
 [ext_resource type="PackedScene" uid="uid://dnv48jokjbodd" path="res://Objects/door_l.tscn" id="3_r1vii"]
 [ext_resource type="PackedScene" uid="uid://bou8v0s6ai0di" path="res://Objects/door_r.tscn" id="4_5g86d"]
 [ext_resource type="TileSet" uid="uid://c236rq06r0qtp" path="res://Level/building blocks/Tileset.tres" id="4_nehge"]
+[ext_resource type="PackedScene" uid="uid://cy0pnhwrhhsiy" path="res://Objects/Key.tscn" id="4_ol0bq"]
 [ext_resource type="PackedScene" uid="uid://o4sufrciwpyy" path="res://Objects/window.tscn" id="4_t4xar"]
+[ext_resource type="PackedScene" uid="uid://dcnwjpxwaffiq" path="res://Objects/ladder.tscn" id="5_o4euk"]
+[ext_resource type="PackedScene" uid="uid://e8ns0e3b6oom" path="res://Objects/lever.tscn" id="6_37c0u"]
 [ext_resource type="PackedScene" uid="uid://ble2vq2rxtkes" path="res://Level/building blocks/wall_small.tscn" id="6_nu3dv"]
+[ext_resource type="PackedScene" uid="uid://bq5uuayncok68" path="res://Objects/button.tscn" id="7_kd8qy"]
+[ext_resource type="PackedScene" uid="uid://ctilqc6y0uf8b" path="res://Objects/hatch.tscn" id="11_vdp0k"]
+[ext_resource type="PackedScene" uid="uid://ccd75n2u05s3h" path="res://Objects/rain.tscn" id="12_1ivao"]
+[ext_resource type="Texture2D" uid="uid://bthaes5yh5ey1" path="res://Assets/Background/rain/rain0000.png" id="13_rpy2v"]
+[ext_resource type="Texture2D" uid="uid://i4fgbkffkbxw" path="res://Assets/Background/rain/rain0001.png" id="14_sf4cv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ji6ps"]
+resource_local_to_scene = true
+size = Vector2(108.125, 262.25)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_52we5"]
+resource_local_to_scene = true
+frames = 2
+frame_0/texture = ExtResource("13_rpy2v")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("14_sf4cv")
+frame_1/duration = 0.1
 
 [node name="Level1" type="Node2D"]
 
@@ -19,7 +39,7 @@ texture_repeat = 2
 position = Vector2(-14.1624, 1.60026)
 scale = Vector2(0.960458, 0.954427)
 texture = ExtResource("1_8t1yi")
-polygon = PackedVector2Array(-322.594, 30.8035, -324.676, 149.199, -119.565, 151.295, -119.565, 30.8035)
+polygon = PackedVector2Array(-323.635, -106.452, -324.676, 149.199, -121.648, 151.295, -122.689, -106.452)
 
 [node name="Bird" parent="." node_paths=PackedStringArray("human") instance=ExtResource("1_iqvb5")]
 position = Vector2(-518, 127)
@@ -43,10 +63,30 @@ visible = false
 
 [node name="Interactables" type="Node2D" parent="."]
 
+[node name="Key" parent="Interactables" instance=ExtResource("4_ol0bq")]
+position = Vector2(-251, -41)
+
+[node name="Key2" parent="Interactables" instance=ExtResource("4_ol0bq")]
+position = Vector2(37, -44)
+
+[node name="ladder" parent="Interactables" instance=ExtResource("5_o4euk")]
+position = Vector2(-249, 88)
+
+[node name="lever" parent="Interactables" node_paths=PackedStringArray("conected_objects") instance=ExtResource("6_37c0u")]
+position = Vector2(-288, 69)
+conected_objects = [NodePath("../../Doors/door_R2")]
+
+[node name="button" parent="Interactables" node_paths=PackedStringArray("conected_objects") instance=ExtResource("7_kd8qy")]
+position = Vector2(-163, -63)
+conected_objects = [NodePath("../../Walls/hatch"), NodePath("../../Rain/Rain")]
+
 [node name="Window" type="Node2D" parent="."]
 
 [node name="window" parent="Window" instance=ExtResource("4_t4xar")]
 position = Vector2(-325, -41)
+
+[node name="window2" parent="Window" instance=ExtResource("4_t4xar")]
+position = Vector2(5, -41)
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -59,8 +99,20 @@ position = Vector2(-637.5, -2)
 [node name="wall medium3" parent="Walls" instance=ExtResource("3_n36oo")]
 position = Vector2(-325, 55)
 
+[node name="wall medium13" parent="Walls" instance=ExtResource("3_n36oo")]
+position = Vector2(-133, 54)
+
+[node name="wall medium14" parent="Walls" instance=ExtResource("3_n36oo")]
+position = Vector2(5, 54)
+
 [node name="wall medium10" parent="Walls" instance=ExtResource("3_n36oo")]
 position = Vector2(-133, -9)
+
+[node name="wall medium17" parent="Walls" instance=ExtResource("3_n36oo")]
+position = Vector2(68, -9)
+
+[node name="wall medium18" parent="Walls" instance=ExtResource("3_n36oo")]
+position = Vector2(68, -73)
 
 [node name="wall medium11" parent="Walls" instance=ExtResource("3_n36oo")]
 position = Vector2(-133, -73)
@@ -70,12 +122,16 @@ position = Vector2(-289, 27)
 rotation = 1.5708
 
 [node name="wall medium7" parent="Walls" instance=ExtResource("3_n36oo")]
-position = Vector2(-289, 84)
+position = Vector2(-289, 83)
 rotation = 1.5708
 
 [node name="wall medium8" parent="Walls" instance=ExtResource("3_n36oo")]
 position = Vector2(-226, -100)
 rotation = 1.5708
+
+[node name="wall medium19" parent="Walls" instance=ExtResource("3_n36oo")]
+position = Vector2(-191, -64)
+rotation = 3.14159
 
 [node name="wall medium12" parent="Walls" instance=ExtResource("3_n36oo")]
 position = Vector2(-163, -100)
@@ -83,6 +139,14 @@ rotation = 1.5708
 
 [node name="wall medium9" parent="Walls" instance=ExtResource("3_n36oo")]
 position = Vector2(-290, -100)
+rotation = 1.5708
+
+[node name="wall medium15" parent="Walls" instance=ExtResource("3_n36oo")]
+position = Vector2(40, -100)
+rotation = 1.5708
+
+[node name="wall medium16" parent="Walls" instance=ExtResource("3_n36oo")]
+position = Vector2(41, 27)
 rotation = 1.5708
 
 [node name="wall medium5" parent="Walls" instance=ExtResource("3_n36oo")]
@@ -99,16 +163,31 @@ position = Vector2(-325, 7)
 [node name="wall small2" parent="Walls" instance=ExtResource("6_nu3dv")]
 position = Vector2(-325, -89)
 
+[node name="wall small5" parent="Walls" instance=ExtResource("6_nu3dv")]
+position = Vector2(-325, -89)
+
+[node name="wall small3" parent="Walls" instance=ExtResource("6_nu3dv")]
+position = Vector2(5, 7)
+
+[node name="wall small4" parent="Walls" instance=ExtResource("6_nu3dv")]
+position = Vector2(5, -89)
+
+[node name="hatch" parent="Walls" instance=ExtResource("11_vdp0k")]
+position = Vector2(-124, -109)
+rotation = 3.48787e-16
+scale = Vector2(0.4, 1)
+start_angle = 90
+end_angle = 0
+
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="door_L" parent="Doors" instance=ExtResource("3_r1vii")]
 position = Vector2(-325.5, 119)
+locked = true
 
-[node name="CollisionShape2D" parent="Doors/door_L/StaticBody2D" index="0"]
-visible = false
-
-[node name="CollisionShape2D" parent="Doors/door_L" index="3"]
-visible = false
+[node name="door_L2" parent="Doors" instance=ExtResource("3_r1vii")]
+position = Vector2(4.5, 118)
+locked = true
 
 [node name="door_R" parent="Doors" instance=ExtResource("4_5g86d")]
 position = Vector2(-638, 118)
@@ -119,15 +198,42 @@ visible = false
 [node name="CollisionShape2D" parent="Doors/door_R" index="3"]
 visible = false
 
+[node name="door_R2" parent="Doors" instance=ExtResource("4_5g86d")]
+position = Vector2(-133.5, 118)
+locked = true
+
 [node name="Rain" type="Node2D" parent="."]
+
+[node name="Rain" parent="Rain" instance=ExtResource("12_1ivao")]
+position = Vector2(-85, -81)
+
+[node name="CollisionShape2D" parent="Rain/Rain" index="0"]
+position = Vector2(30.9375, 93)
+shape = SubResource("RectangleShape2D_ji6ps")
+
+[node name="rain" parent="Rain/Rain" index="1"]
+texture = SubResource("AnimatedTexture_52we5")
+
+[node name="Rain2" parent="Rain" instance=ExtResource("12_1ivao")]
+position = Vector2(-85, -326)
+
+[node name="CollisionShape2D" parent="Rain/Rain2" index="0"]
+position = Vector2(31, 75)
+shape = SubResource("RectangleShape2D_ji6ps")
+
+[node name="rain" parent="Rain/Rain2" index="1"]
+texture = SubResource("AnimatedTexture_52we5")
 
 [node name="Traps" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("4_nehge")
 format = 2
-layer_0/tile_data = PackedInt32Array(262138, 0, 0, 262139, 65536, 0, 262140, 0, 0, 262141, 65536, 0, 262142, 65536, 0, 262143, 65536, 0, 196608, 0, 0, 196609, 65536, 0, 196610, 131072, 1, 262136, 0, 0, 262137, 65536, 0, 262135, 0, 0, 262147, 131072, 1, 327684, 131072, 2, 327685, 0, 2, 327686, 196608, 2, 262134, 0, 0, 327669, 196608, 2, 327668, 196608, 2, 327670, 0, 1, 327671, 0, 3, 327672, 0, 3, 327673, 0, 3, 327674, 0, 3, 327675, 0, 3, 327676, 0, 3, 327677, 0, 3, 327678, 0, 3, 327679, 0, 3, 262144, 0, 3, 262145, 0, 3, 262146, 65536, 1, 327683, 65536, 1, 327682, 0, 3, 327681, 0, 3, 327680, 0, 3, 393215, 0, 3, 393214, 0, 3, 393213, 0, 3, 393212, 0, 3, 393211, 0, 3, 393210, 0, 3, 393209, 0, 3, 393208, 0, 3, 393207, 0, 3, 393206, 0, 3, 393205, 0, 3, 393204, 0, 3, 393203, 0, 3, 393202, 0, 3, 393201, 0, 3, 393200, 0, 3, 393199, 0, 3, 327667, 196608, 2, 327666, 196608, 2, 327665, 196608, 2, 327664, 196608, 2, 327663, 196608, 2, 327687, 0, 2, 327688, 0, 2, 327689, 0, 2)
+layer_0/tile_data = PackedInt32Array(262138, 0, 0, 262139, 65536, 0, 262140, 0, 0, 262141, 65536, 0, 262142, 65536, 0, 262143, 65536, 0, 196608, 0, 0, 196609, 65536, 0, 196610, 131072, 1, 262136, 0, 0, 262137, 65536, 0, 262135, 0, 0, 262147, 131072, 1, 327684, 131072, 2, 327685, 0, 2, 327686, 196608, 2, 262134, 0, 0, 327669, 196608, 2, 327668, 196608, 2, 327670, 0, 1, 327671, 0, 3, 327672, 0, 3, 327673, 0, 3, 327674, 0, 3, 327675, 0, 3, 327676, 0, 3, 327677, 0, 3, 327678, 0, 3, 327679, 0, 3, 262144, 0, 3, 262145, 0, 3, 262146, 65536, 1, 327683, 65536, 1, 327682, 0, 3, 327681, 0, 3, 327680, 0, 3, 393215, 0, 3, 393214, 0, 3, 393213, 0, 3, 393212, 0, 3, 393211, 0, 3, 393210, 0, 3, 393209, 0, 3, 393208, 0, 3, 393207, 0, 3, 393206, 0, 3, 393205, 0, 3, 393204, 0, 3, 393203, 0, 3, 393202, 0, 3, 393201, 0, 3, 393200, 0, 3, 393199, 0, 3, 327667, 196608, 2, 327666, 196608, 2, 327665, 196608, 2, 327664, 196608, 2, 327663, 196608, 2, 327687, 0, 2, 327688, 0, 2, 327689, 0, 2, 131076, 196608, 1, 65541, 196608, 1, 131077, 0, 1, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0)
 
 [editable path="human character"]
 [editable path="Doors/door_L"]
+[editable path="Doors/door_L2"]
 [editable path="Doors/door_R"]
+[editable path="Rain/Rain"]
+[editable path="Rain/Rain2"]

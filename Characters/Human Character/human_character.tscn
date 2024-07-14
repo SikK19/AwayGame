@@ -13,8 +13,8 @@
 size = Vector2(24, 32)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2wfok"]
-radius = 52.0
-height = 152.0
+radius = 19.0
+height = 38.0
 
 [sub_resource type="Animation" id="Animation_novnw"]
 resource_name = "throw_wobble"

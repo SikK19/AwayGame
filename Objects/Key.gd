@@ -21,5 +21,5 @@ func interact(body):
 
 func _on_area_2d_body_entered(body):
 	#this should only ever interact with the human!!!!
-	body.has_key = true
+	body.get_key()
 	queue_free()

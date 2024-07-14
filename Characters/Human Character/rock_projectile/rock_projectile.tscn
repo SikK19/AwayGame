@@ -1,11 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0h05fq00hfnd"]
 
 [ext_resource type="Script" path="res://Characters/Human Character/rock_projectile/rock_projectile.gd" id="1_tmy48"]
-[ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="2_qjtrc"]
+[ext_resource type="SpriteFrames" uid="uid://byby2akjxouhm" path="res://Characters/Human Character/rock_projectile/rock change_anim.tres" id="2_1w2ot"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7d0r7"]
+radius = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yu6dn"]
+radius = 5.0
 
 [node name="rock_projectile" type="RigidBody2D"]
 collision_layer = 0
@@ -14,10 +16,9 @@ script = ExtResource("1_tmy48")
 [node name="rock_world_collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7d0r7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2.38419e-07, 2.38419e-07)
-scale = Vector2(0.109375, 0.140625)
-texture = ExtResource("2_qjtrc")
+sprite_frames = ExtResource("2_1w2ot")
 
 [node name="hitbox" type="Area2D" parent="."]
 collision_layer = 0

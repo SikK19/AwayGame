@@ -22,7 +22,7 @@ func open():
 	$door.play("open")
 	if !$SoundOpenDoor.playing:
 		$SoundOpenDoor.play()
-	$StaticBody2D/CollisionShape2D.disabled = true
+	$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
 	#$StaticBody2D.queue_free()
 	set_collision_layer_value(4, false)
 	is_open = true

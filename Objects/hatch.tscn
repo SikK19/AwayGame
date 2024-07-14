@@ -1,24 +1,61 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctilqc6y0uf8b"]
+[gd_scene load_steps=10 format=3 uid="uid://ctilqc6y0uf8b"]
 
 [ext_resource type="Script" path="res://Objects/hatch.gd" id="1_xaocd"]
-[ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="2_vvb8f"]
+[ext_resource type="Texture2D" uid="uid://day5wblr2uco7" path="res://Assets/Interactives/Trapdoor Spritesheet.png" id="2_yb6ff"]
 [ext_resource type="AudioStream" uid="uid://cf8k45btlmici" path="res://Sounds/CREAK_Metal_Heavy_mono.wav" id="3_4lqlk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mp7kw"]
-size = Vector2(315, 16)
+size = Vector2(42, 10)
 
-[node name="hatch" type="StaticBody2D"]
-rotation = 1.5708
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgdgw"]
+atlas = ExtResource("2_yb6ff")
+region = Rect2(0, 0, 85, 85)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc5yt"]
+atlas = ExtResource("2_yb6ff")
+region = Rect2(255, 0, 85, 85)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x4sw"]
+atlas = ExtResource("2_yb6ff")
+region = Rect2(170, 0, 85, 85)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2aukv"]
+atlas = ExtResource("2_yb6ff")
+region = Rect2(85, 0, 85, 85)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u2cys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgdgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc5yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x4sw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2aukv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="hatch" type="Node2D"]
 script = ExtResource("1_xaocd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(150.5, -1)
+[node name="hinge" type="StaticBody2D" parent="."]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hinge"]
+position = Vector2(21, -7.59006e-05)
 shape = SubResource("RectangleShape2D_mp7kw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(150, -1)
-scale = Vector2(2.48438, 0.132813)
-texture = ExtResource("2_vvb8f")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u2cys")
 
 [node name="MovingSound" type="AudioStreamPlayer2D" parent="."]
+rotation = 1.5708
 stream = ExtResource("3_4lqlk")

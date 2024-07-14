@@ -104,8 +104,6 @@ position = Vector2(883, -26)
 [node name="hatch" parent="walls" instance=ExtResource("13_lke4e")]
 position = Vector2(292, -18)
 scale = Vector2(0.5, 1)
-start_angle = 90
-end_angle = 270
 
 [node name="window" parent="walls" instance=ExtResource("5_07v86")]
 position = Vector2(116, -20)

@@ -107,8 +107,6 @@ connected_objects = [NodePath("../ladder")]
 
 [node name="hatch" parent="." instance=ExtResource("9_d8vbd")]
 position = Vector2(-93, -337)
-start_angle = 90
-end_angle = 0
 
 [node name="Rain" parent="." instance=ExtResource("10_yrc4y")]
 position = Vector2(-89, -336)

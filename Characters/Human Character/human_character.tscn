@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Characters/Human Character/CameraBirdHuman.gd" id="4_qc14b"]
 [ext_resource type="Texture2D" uid="uid://cw4aeoelk1kue" path="res://Characters/Human Character/Char_Climbing.PNG" id="5_wdysx"]
 [ext_resource type="Texture2D" uid="uid://c3w1imhloa7s5" path="res://Characters/Human Character/Char_Jumping.PNG" id="6_53nt3"]
-[ext_resource type="AudioStream" uid="uid://cwpjpx0braeng" path="res://Sounds/Objects/UsedSounds/Running.wav" id="8_v8qwp"]
+[ext_resource type="AudioStream" uid="uid://cwpjpx0braeng" path="res://Sounds/Objects/UsedSounds/Running.wav" id="8_0qkv8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8phdw"]
 size = Vector2(24, 32)
@@ -209,7 +209,7 @@ collision_mask = 128
 shape = SubResource("CapsuleShape2D_v1ss8")
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_v8qwp")
+stream = ExtResource("8_0qkv8")
 volume_db = -10.0
 
 [node name="Timer" type="Timer" parent="."]

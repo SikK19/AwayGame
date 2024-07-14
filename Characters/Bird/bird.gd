@@ -49,6 +49,10 @@ func _physics_process(delta):
 		sprite_flying.visible = true
 		sprite_flying.play("default")
 		
+	if (is_on_floor() || is_on_character) && Input.is_action_pressed("fly_to_cursor"):
+		if !$TakeOffSound.playing:
+			$TakeOffSound.play()
+		
 	mouse_position = get_global_mouse_position()
 	if Input.is_action_pressed("fly_to_cursor") && not is_on_character:
 		direction_flying = (mouse_position - position).normalized()	

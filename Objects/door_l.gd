@@ -18,7 +18,7 @@ func interact(player):
 		
 func open():
 	$door.play("open")
-	$AudioStreamPlayer2D.play()
+	$SoundOpenDoor.play()
 	$StaticBody2D/CollisionShape2D.disabled = true
 	#$StaticBody2D.queue_free()
 	set_collision_layer_value(4, false)
@@ -26,9 +26,9 @@ func open():
 	
 func close():
 	$door.play("close")
-	var time_in_seconds = 0.8
+	var time_in_seconds = 0.5
 	await get_tree().create_timer(time_in_seconds).timeout
-	$AudioStreamPlayer2D.play()
+	$SoundCloseDoor.play()
 	$StaticBody2D/CollisionShape2D.disabled = false
 	#$StaticBody2D.queue_free()
 	set_collision_layer_value(4, true)

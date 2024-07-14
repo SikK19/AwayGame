@@ -92,3 +92,7 @@ func land_on_character():
 	
 func take_key():
 	has_key = true
+
+func damage():
+	print("bird damaged")
+	#TODO: do something when taking damage

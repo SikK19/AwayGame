@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://4np5bu4mq4ei"]
+
+[ext_resource type="Texture2D" uid="uid://jos0f6boufoo" path="res://Assets/Main Layer/Walls Spritesheet.png" id="1_mgua5"]
+
+[node name="wall medium" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4.5, 32, 4.5, 32, 4.5, -32, -4.5, -32)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mgua5")
+region_enabled = true
+region_rect = Rect2(5, 64, 9, 64)

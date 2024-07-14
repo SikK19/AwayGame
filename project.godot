@@ -16,6 +16,12 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 run/layer_8=""
 
+[display]
+
+window/size/viewport_width=2500
+window/size/viewport_height=1750
+window/size/mode=2
+
 [input]
 
 right={

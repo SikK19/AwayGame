@@ -97,4 +97,7 @@ func loose_key():
 	has_key = false
 	#TODO: Ui updaten
 
+func damage():
+	print("human damaged")
+	#TODO: do something when damage is taken, for example restart the level
 

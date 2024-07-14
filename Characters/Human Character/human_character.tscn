@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://df28qr6yof5oy" path="res://Characters/Human Character/Char_Idle.PNG" id="2_ixko3"]
 [ext_resource type="SpriteFrames" uid="uid://byby2akjxouhm" path="res://Characters/Human Character/rock_projectile/rock change_anim.tres" id="2_v8yru"]
 [ext_resource type="Texture2D" uid="uid://c2q5jsbbls6m2" path="res://Characters/Human Character/Char_Running.PNG" id="4_7fbde"]
+[ext_resource type="PackedScene" uid="uid://875a7xduhdf3" path="res://UI/PauseMenu.tscn" id="4_34isv"]
 [ext_resource type="Script" path="res://Characters/Human Character/CameraBirdHuman.gd" id="4_qc14b"]
 [ext_resource type="Texture2D" uid="uid://cw4aeoelk1kue" path="res://Characters/Human Character/Char_Climbing.PNG" id="5_wdysx"]
 [ext_resource type="Texture2D" uid="uid://c3w1imhloa7s5" path="res://Characters/Human Character/Char_Jumping.PNG" id="6_53nt3"]
@@ -30,7 +31,23 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.174533, -1.0821, 0.174533]
+"values": [0.174533, -1.55334, 0.174533]
+}
+
+[sub_resource type="Animation" id="Animation_y0ich"]
+resource_name = "throw_wobble_flipped"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [2.96706, 4.69494, 2.96706]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cntc7"]
@@ -185,6 +202,14 @@ libraries = {
 zoom = Vector2(2, 2)
 script = ExtResource("4_qc14b")
 human = NodePath("..")
+
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("4_34isv")]
+visible = false
+z_index = 100
+offset_left = -47.0
+offset_top = -94.0
+offset_right = -47.0
+offset_bottom = -94.0
 
 [node name="rock_throw_cooldown" type="Timer" parent="."]
 wait_time = 0.5

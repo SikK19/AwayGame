@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cy0pnhwrhhsiy"]
+[gd_scene load_steps=20 format=3 uid="uid://cy0pnhwrhhsiy"]
 
 [ext_resource type="Script" path="res://Objects/key.gd" id="1_6cs4v"]
 [ext_resource type="Texture2D" uid="uid://cy5etkxos4305" path="res://Objects/pixel-art-key/key-blue.png" id="2_wdjkm"]
@@ -130,8 +130,7 @@ collision_mask = 32
 position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_ach1q")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-
 [node name="PickupKey" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_a20h6")
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

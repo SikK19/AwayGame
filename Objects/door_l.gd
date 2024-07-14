@@ -1,6 +1,7 @@
 extends Area2D
 
 var is_open = false
+@export var locked = false
 
 func activate(_state = false):
 	if is_open:
@@ -9,12 +10,13 @@ func activate(_state = false):
 		open()
 
 func interact(player):	
-	if player.has_key && not is_open:	
-		open()
-		player.loose_key()
 	if is_open:
 		close()
-		#TODO: sound feedback
+	elif (player.has_key || !locked ) && not is_open:	
+		open()
+		player.loose_key()
+		locked = false
+	
 		
 func open():
 	$door.play("open")

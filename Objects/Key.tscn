@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://cy0pnhwrhhsiy"]
+[gd_scene load_steps=19 format=3 uid="uid://cy0pnhwrhhsiy"]
 
 [ext_resource type="Script" path="res://Objects/key.gd" id="1_6cs4v"]
 [ext_resource type="Texture2D" uid="uid://cy5etkxos4305" path="res://Objects/pixel-art-key/key-blue.png" id="2_wdjkm"]
+[ext_resource type="AudioStream" uid="uid://d1xkpoeanruvw" path="res://Sounds/PickupKey.wav" id="3_a20h6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqe4h"]
 size = Vector2(13, 28)
@@ -117,3 +118,6 @@ shape = SubResource("RectangleShape2D_mqe4h")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3cejp")
 frame_progress = 0.795688
+
+[node name="PickupKey" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_a20h6")

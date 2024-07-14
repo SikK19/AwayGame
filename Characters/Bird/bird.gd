@@ -55,8 +55,12 @@ func _physics_process(delta):
 		
 	mouse_position = get_global_mouse_position()
 	if Input.is_action_pressed("fly_to_cursor") && not is_on_character:
-		direction_flying = (mouse_position - position).normalized()	
-		velocity = (direction_flying * SPEED)
+		if (global_position - mouse_position).length() < 1:
+			print("here")
+			velocity = Vector2(0,0)
+		else:
+			direction_flying = (mouse_position - position).normalized()	
+			velocity = (direction_flying * SPEED)
 		if abs(mouse_position.x - position.x) > 10:
 			if direction_flying.x > 0.2:
 				sprite_idle.flip_h = false

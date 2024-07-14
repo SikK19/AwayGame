@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bl7036g41ale"]
+[gd_scene load_steps=43 format=3 uid="uid://bl7036g41ale"]
 
 [ext_resource type="Texture2D" uid="uid://cnwh0nvdt7soa" path="res://Assets/Background/Indoor Background Tile.png" id="1_8t1yi"]
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="1_iqvb5"]
@@ -62,6 +62,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_si3a8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q56v"]
+size = Vector2(63, 7)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ji6ps"]
 resource_local_to_scene = true
 size = Vector2(92, 250.062)
@@ -108,7 +113,7 @@ frame_1/duration = 0.1
 resource_local_to_scene = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tehrv"]
-size = Vector2(702, 37)
+size = Vector2(64, 59)
 
 [node name="Level1" type="Node2D"]
 
@@ -270,25 +275,60 @@ position = Vector2(-629, 22)
 [node name="wall medium" parent="Walls" instance=ExtResource("3_n36oo")]
 position = Vector2(-629, -73)
 
-[node name="Sprite2D" type="Sprite2D" parent="Walls"]
-position = Vector2(-289, 27)
-texture = ExtResource("15_bth4k")
-
 [node name="Sprite2D5" type="Sprite2D" parent="Walls"]
 position = Vector2(-290, 83)
 texture = ExtResource("15_bth4k")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Walls"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Sprite2D5"]
+physics_material_override = SubResource("PhysicsMaterial_si3a8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Sprite2D5/StaticBody2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_2q56v")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Walls"]
+position = Vector2(-289, 27)
+texture = ExtResource("15_bth4k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Sprite2D6"]
+physics_material_override = SubResource("PhysicsMaterial_si3a8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Sprite2D6/StaticBody2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_2q56v")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Walls"]
 position = Vector2(-225, 27)
 texture = ExtResource("15_bth4k")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Walls"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Sprite2D7"]
+physics_material_override = SubResource("PhysicsMaterial_si3a8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Sprite2D7/StaticBody2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_2q56v")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Walls"]
 position = Vector2(-161, 27)
 texture = ExtResource("15_bth4k")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Walls"]
-position = Vector2(2, 27)
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Sprite2D8"]
+physics_material_override = SubResource("PhysicsMaterial_si3a8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Sprite2D8/StaticBody2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_2q56v")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Walls"]
+position = Vector2(3, 27)
 texture = ExtResource("15_bth4k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Sprite2D9"]
+physics_material_override = SubResource("PhysicsMaterial_si3a8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Sprite2D9/StaticBody2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_2q56v")
 
 [node name="wall medium17" parent="Walls" instance=ExtResource("3_n36oo")]
 position = Vector2(30, -2)
@@ -399,8 +439,16 @@ script = ExtResource("23_ngix3")
 position = Vector2(-341, 8.5)
 shape = SubResource("RectangleShape2D_tehrv")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(1065, 97.5)
+shape = SubResource("RectangleShape2D_tehrv")
+
 [node name="Sprite2D" type="Sprite2D" parent="DeathZone"]
 position = Vector2(-19, 6)
+texture = ExtResource("24_dvuvl")
+
+[node name="Sprite2D23" type="Sprite2D" parent="DeathZone"]
+position = Vector2(1066, 102)
 texture = ExtResource("24_dvuvl")
 
 [node name="Sprite2D2" type="Sprite2D" parent="DeathZone"]

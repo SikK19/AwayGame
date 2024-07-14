@@ -1,10 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://d5kn5e6p8p3v"]
+[gd_scene load_steps=7 format=3 uid="uid://d5kn5e6p8p3v"]
 
 [ext_resource type="Script" path="res://Objects/lever.gd" id="1_fpvxu"]
-[ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="2_rcemh"]
+[ext_resource type="Texture2D" uid="uid://r17am8ts0p0g" path="res://Assets/Interactives/Lever Spitesheet.png" id="3_elrdu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ock80"]
-size = Vector2(82, 223)
+size = Vector2(50, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2333i"]
+atlas = ExtResource("3_elrdu")
+region = Rect2(0, 0, 36, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjgcf"]
+atlas = ExtResource("3_elrdu")
+region = Rect2(0, 22, 36, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m7plb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2333i")
+}],
+"loop": true,
+"name": &"state1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjgcf")
+}],
+"loop": true,
+"name": &"state2",
+"speed": 5.0
+}]
 
 [node name="lever" type="Area2D"]
 collision_layer = 12
@@ -12,18 +39,9 @@ collision_mask = 0
 script = ExtResource("1_fpvxu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 8.5)
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_ock80")
 
-[node name="state1" type="Sprite2D" parent="."]
-modulate = Color(0.286275, 1, 1, 1)
-position = Vector2(-7, 8.49999)
-scale = Vector2(0.65625, 1.75781)
-texture = ExtResource("2_rcemh")
-
-[node name="state2" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(0.355678, 0.556967, 0.142851, 1)
-position = Vector2(-7, 8.49999)
-scale = Vector2(0.65625, 1.75781)
-texture = ExtResource("2_rcemh")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m7plb")
+animation = &"state2"

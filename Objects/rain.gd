@@ -15,7 +15,8 @@ func _ready():
 	
 func activate():
 	$CollisionShape2D.set_deferred("disabled", not $CollisionShape2D.disabled)
-	set_deferred("disabled", not $damage_box/CollisionShape2D.disabled)
+	$damage_box/CollisionShape2D.set_deferred("disabled", not $damage_box/CollisionShape2D.disabled)
+	print($rain.visible)
 	$rain.visible = not $rain.visible
-	
+	print($rain.visible)
 

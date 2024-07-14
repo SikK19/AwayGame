@@ -41,10 +41,6 @@ scale = Vector2(0.960458, 0.954427)
 texture = ExtResource("1_8t1yi")
 polygon = PackedVector2Array(-323.635, -106.452, -324.676, 149.199, -121.648, 151.295, -122.689, -106.452)
 
-[node name="Bird" parent="." node_paths=PackedStringArray("human") instance=ExtResource("1_iqvb5")]
-position = Vector2(-518, 127)
-human = NodePath("../human character")
-
 [node name="human character" parent="." node_paths=PackedStringArray("bird") instance=ExtResource("2_r7061")]
 position = Vector2(-552, 121)
 bird = NodePath("../Bird")
@@ -60,6 +56,10 @@ visible = false
 
 [node name="CollisionShape2D" parent="human character/ladder detector" index="0"]
 visible = false
+
+[node name="Bird" parent="." node_paths=PackedStringArray("human") instance=ExtResource("1_iqvb5")]
+position = Vector2(-518, 127)
+human = NodePath("../human character")
 
 [node name="Interactables" type="Node2D" parent="."]
 

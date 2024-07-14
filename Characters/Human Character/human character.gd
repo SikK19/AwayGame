@@ -9,7 +9,7 @@ var has_key = false
 var is_climbing = false
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -200.0
 
 @export var bird:Node2D
 var is_bird_on_human = false

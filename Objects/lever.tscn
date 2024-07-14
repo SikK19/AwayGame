@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d5kn5e6p8p3v"]
+[gd_scene load_steps=8 format=3 uid="uid://e8ns0e3b6oom"]
 
 [ext_resource type="Script" path="res://Objects/lever.gd" id="1_fpvxu"]
 [ext_resource type="Texture2D" uid="uid://r17am8ts0p0g" path="res://Assets/Interactives/Lever Spitesheet.png" id="3_elrdu"]
+[ext_resource type="AudioStream" uid="uid://rkoyd1cme0jk" path="res://Sounds/Objects/Lever.wav" id="3_i3bxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ock80"]
 size = Vector2(50, 27)
@@ -45,3 +46,6 @@ shape = SubResource("RectangleShape2D_ock80")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m7plb")
 animation = &"state2"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_i3bxj")

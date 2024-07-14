@@ -1,11 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://o4sufrciwpyy"]
 
-[ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="1_6jxe2"]
 [ext_resource type="Script" path="res://Objects/window.gd" id="1_pngfv"]
+
+[ext_resource type="Texture2D" uid="uid://phwg5dx0e2n0" path="res://Assets/Interactives/window spritesheet0000.png" id="2_k6wtn"]
+
 [ext_resource type="AudioStream" uid="uid://cv3s6a1jk7bif" path="res://Sounds/Objects/UsedSounds/WindowShattering.wav" id="3_qc3ip"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hb3db"]
-size = Vector2(44, 192)
+size = Vector2(26, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_farr4"]
+size = Vector2(10, 64)
 
 [node name="window" type="Area2D"]
 collision_layer = 8
@@ -13,28 +19,30 @@ collision_mask = 0
 script = ExtResource("1_pngfv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-9, -28)
 shape = SubResource("RectangleShape2D_hb3db")
 
-[node name="window" type="Sprite2D" parent="."]
-modulate = Color(0.336608, 0.336608, 0.336608, 1)
-position = Vector2(-5, -29.5)
-scale = Vector2(0.296875, 1.50781)
-texture = ExtResource("1_6jxe2")
+[node name="window_full" type="Sprite2D" parent="."]
+texture = ExtResource("2_k6wtn")
+region_enabled = true
+region_rect = Rect2(52, 0, 10, 64)
 
 [node name="window_broken" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(0.298039, 1, 1, 1)
-position = Vector2(-5, -29.5)
-scale = Vector2(0.296875, 1.50781)
+texture = ExtResource("2_k6wtn")
+region_enabled = true
+region_rect = Rect2(71, 0, 10, 64)
+
+[node name="frame" type="Sprite2D" parent="."]
+texture = ExtResource("2_k6wtn")
+region_enabled = true
+region_rect = Rect2(13, 0, 6, 64)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 96
 collision_mask = 0
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-4.5, -28)
-shape = SubResource("RectangleShape2D_hb3db")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_farr4")
 
 [node name="ShatterGlass" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_qc3ip")

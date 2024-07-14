@@ -5,10 +5,6 @@ extends Area2D
 func interact(_bird):
 	for o in connected_objects:
 		o.activate()
-	#TODO: change to snapped rope instead
-	queue_free()
-
-
-
-
-
+	$string_full.visible = false
+	$string_cut.visible = true
+	$CollisionShape2D.set_deferred("disabled", true)

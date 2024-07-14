@@ -75,6 +75,8 @@ func _physics_process(delta):
 	if is_on_character && Input.is_action_pressed("fly_to_cursor"):
 		is_on_character = false
 		human.is_bird_on_human = false
+		#restart collision for bird
+		$CollisionShape2D.set_deferred("disabled", false)
 		
 	if $interactrange.has_overlapping_areas() && Input.is_action_just_pressed("bird_interact"):
 		$interactrange.get_overlapping_areas()[0].interact(self)
@@ -90,10 +92,12 @@ func land_on_character():
 	sprite_idle.visible = true
 	is_on_character = true
 	human.is_bird_on_human = true
+	#remove all collisions for the bird so that it can be carried through rain
+	$CollisionShape2D.set_deferred("disabled", true)
 	
 func take_key():
 	has_key = true
 
 func damage():
 	print("bird damaged")
-	#TODO: do something when taking damage
+	get_tree().call_deferred("reload_current_scene")

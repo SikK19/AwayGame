@@ -106,6 +106,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ach1q"]
+size = Vector2(13, 28)
+
 [node name="Key" type="Area2D"]
 collision_layer = 20
 collision_mask = 96
@@ -119,5 +122,16 @@ shape = SubResource("RectangleShape2D_mqe4h")
 sprite_frames = SubResource("SpriteFrames_3cejp")
 frame_progress = 0.795688
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_ach1q")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+
 [node name="PickupKey" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_a20h6")
+

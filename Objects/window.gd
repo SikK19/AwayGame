@@ -1,8 +1,10 @@
 extends Area2D
 
 func interact(_rock):
-	$window.visible = false
+
+	$window_full.visible = false
 	$ShatterGlass.play()
+
 	$window_broken.visible = true
 	
 	

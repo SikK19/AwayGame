@@ -1,8 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://ctilqc6y0uf8b"]
 
 [ext_resource type="Script" path="res://Objects/hatch.gd" id="1_xaocd"]
+
 [ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="2_vvb8f"]
 [ext_resource type="AudioStream" uid="uid://cf8k45btlmici" path="res://Sounds/CREAK_Metal_Heavy_mono.wav" id="3_4lqlk"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mp7kw"]
 size = Vector2(315, 16)

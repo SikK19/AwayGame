@@ -80,9 +80,11 @@ ask_bird_to_fly={
 2d_physics/layer_3="human-interactable"
 2d_physics/layer_4="rock-interactable"
 2d_physics/layer_5="bird-interactable"
-2d_physics/layer_6="human"
-2d_physics/layer_7="bird"
+2d_physics/layer_6="human-collision"
+2d_physics/layer_7="bird-collision"
 2d_physics/layer_8="ladder"
+2d_physics/layer_9="bird-damage"
+2d_physics/layer_10="human-damage"
 
 [rendering]
 

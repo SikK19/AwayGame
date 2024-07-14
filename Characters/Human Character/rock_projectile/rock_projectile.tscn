@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0h05fq00hfnd"]
 
 [ext_resource type="Script" path="res://Characters/Human Character/rock_projectile/rock_projectile.gd" id="1_tmy48"]
-[ext_resource type="Texture2D" uid="uid://tqn5hau1b1ro" path="res://icon.svg" id="2_qjtrc"]
+[ext_resource type="Texture2D" uid="uid://b81h772njwvs" path="res://icon.svg" id="2_qjtrc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7d0r7"]
 

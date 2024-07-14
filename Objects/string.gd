@@ -8,8 +8,3 @@ func interact(_bird):
 	$string_full.visible = false
 	$string_cut.visible = true
 	$CollisionShape2D.set_deferred("disabled", true)
-
-
-
-
-

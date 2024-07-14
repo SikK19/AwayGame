@@ -151,7 +151,7 @@ radius = 12.0
 height = 36.0
 
 [node name="human character" type="CharacterBody2D"]
-collision_layer = 32
+collision_layer = 544
 collision_mask = 33
 script = ExtResource("1_vbv80")
 
@@ -208,4 +208,3 @@ collision_mask = 128
 shape = SubResource("CapsuleShape2D_v1ss8")
 
 [connection signal="timeout" from="rock_throw_cooldown" to="." method="_on_rock_throw_cooldown_timeout"]
-[connection signal="area_entered" from="ladder detector" to="." method="_on_ladder_detector_area_entered"]

@@ -9,6 +9,7 @@ resource_local_to_scene = true
 size = Vector2(50, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4piy3"]
+resource_local_to_scene = true
 
 [node name="Rain" type="StaticBody2D"]
 collision_layer = 64
@@ -32,5 +33,6 @@ script = ExtResource("2_3wmf0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damage_box"]
 shape = SubResource("RectangleShape2D_4piy3")
+debug_color = Color(0.798646, 0.0853436, 0.70859, 0.42)
 
 [connection signal="body_entered" from="damage_box" to="damage_box" method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c61nitnrrktwb"]
+[gd_scene load_steps=17 format=3 uid="uid://c61nitnrrktwb"]
 
 [ext_resource type="PackedScene" uid="uid://bnhytv3l22cqf" path="res://Characters/Human Character/human_character.tscn" id="1_ynlki"]
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="2_5mjg1"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://o4sufrciwpyy" path="res://Objects/window.tscn" id="4_1h38l"]
 [ext_resource type="PackedScene" uid="uid://dcnwjpxwaffiq" path="res://Objects/ladder.tscn" id="5_e1byl"]
 [ext_resource type="PackedScene" uid="uid://cuyxkbyvdwq3k" path="res://Objects/string.tscn" id="6_xrq1v"]
-[ext_resource type="PackedScene" uid="uid://dnv48jokjbodd" path="res://Objects/door_l.tscn" id="7_p6cpg"]
+[ext_resource type="PackedScene" uid="uid://btovb3xsv3h8e" path="res://Objects/door_l.tscn" id="7_p6cpg"]
 [ext_resource type="PackedScene" uid="uid://cy0pnhwrhhsiy" path="res://Objects/Key.tscn" id="8_jrvjh"]
 [ext_resource type="PackedScene" uid="uid://ctilqc6y0uf8b" path="res://Objects/hatch.tscn" id="9_d8vbd"]
 [ext_resource type="PackedScene" uid="uid://ccd75n2u05s3h" path="res://Objects/rain.tscn" id="10_yrc4y"]
@@ -25,6 +25,9 @@ resource_local_to_scene = true
 frames = 2
 frame_0/duration = 0.2
 frame_1/duration = 0.2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gc1ie"]
+resource_local_to_scene = true
 
 [node name="Test" type="Node2D"]
 
@@ -117,6 +120,9 @@ shape = SubResource("RectangleShape2D_ar232")
 
 [node name="rain" parent="Rain" index="1"]
 texture = SubResource("AnimatedTexture_s8lqq")
+
+[node name="CollisionShape2D" parent="Rain/damage_box" index="0"]
+shape = SubResource("RectangleShape2D_gc1ie")
 
 [node name="button" parent="." node_paths=PackedStringArray("conected_objects") instance=ExtResource("11_wxs1c")]
 position = Vector2(-529, 5)

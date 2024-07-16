@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+@onready var Pause_Menu = $Camera2D/PauseMenu
+var paused = false
+
 var rock_scene = load("res://Characters/Human Character/rock_projectile/rock_projectile.tscn")
 var throw_force = 750
 var can_throw = true
@@ -25,6 +28,10 @@ func _ready():
 	$key_sprite.play("default")
 
 func _physics_process(delta):
+	
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
+	
 	if (velocity.x > 0 || velocity.x < 0) && velocity.y == 0:
 		animations.play("Running")
 		if !$Footsteps.playing:
@@ -120,3 +127,12 @@ func damage():
 	print("human damaged")
 	get_tree().call_deferred("reload_current_scene")
 
+func pauseMenu():
+	if paused:
+		Pause_Menu.hide()
+		Engine.time_scale = 1
+	else:
+		Pause_Menu.show()
+		Engine.time_scale = 0
+		
+	paused = !paused

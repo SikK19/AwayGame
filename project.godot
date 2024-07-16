@@ -18,6 +18,10 @@ run/layer_8=""
 run/size/viewport_height=648
 run/size/viewport_width=1152
 
+[debug]
+
+gdscript/warnings/integer_division=0
+
 [display]
 
 window/size/mode=2

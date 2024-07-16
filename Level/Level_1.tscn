@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bl7036g41ale"]
+[gd_scene load_steps=23 format=3 uid="uid://dq2giryhoh22e"]
 
 [ext_resource type="Texture2D" uid="uid://cnwh0nvdt7soa" path="res://Assets/Background/Indoor Background Tile.png" id="1_8t1yi"]
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="1_iqvb5"]
@@ -79,41 +79,11 @@ frame_0/duration = 0.1
 frame_1/texture = ExtResource("14_sf4cv")
 frame_1/duration = 0.1
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ge6u"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygo0p"]
 resource_local_to_scene = true
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rd05t"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3m30e"]
 resource_local_to_scene = true
-size = Vector2(2308, 129)
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_hqvdq"]
-resource_local_to_scene = true
-frames = 2
-frame_0/texture = ExtResource("13_rpy2v")
-frame_0/duration = 0.1
-frame_1/texture = ExtResource("14_sf4cv")
-frame_1/duration = 0.1
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ixp2"]
-resource_local_to_scene = true
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yde77"]
-resource_local_to_scene = true
-size = Vector2(707, 313)
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_wy8or"]
-resource_local_to_scene = true
-frames = 2
-frame_0/texture = ExtResource("13_rpy2v")
-frame_0/duration = 0.1
-frame_1/texture = ExtResource("14_sf4cv")
-frame_1/duration = 0.1
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_57can"]
-resource_local_to_scene = true
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tehrv"]
-size = Vector2(64, 59)
 
 [node name="Level1" type="Node2D"]
 
@@ -260,7 +230,9 @@ position = Vector2(-33, 7)
 position = Vector2(-33, -89)
 
 [node name="hatch" parent="Walls" instance=ExtResource("11_vdp0k")]
+
 position = Vector2(-124, -99)
+
 start_angle = 90
 end_angle = 0
 
@@ -374,6 +346,7 @@ offset_bottom = 64.0
 texture = SubResource("AnimatedTexture_52we5")
 
 [node name="CollisionShape2D" parent="Rain/Rain/damage_box" index="0"]
+
 shape = SubResource("RectangleShape2D_4ge6u")
 
 [node name="Rain2" parent="Rain" instance=ExtResource("12_1ivao")]
@@ -401,6 +374,9 @@ texture = SubResource("AnimatedTexture_wy8or")
 
 [node name="CollisionShape2D" parent="Rain/Rain3/damage_box" index="0"]
 shape = SubResource("RectangleShape2D_57can")
+
+[node name="CollisionShape2D" parent="Rain/Rain2/damage_box" index="0"]
+shape = SubResource("RectangleShape2D_3m30e")
 
 [node name="Traps" type="Node2D" parent="."]
 

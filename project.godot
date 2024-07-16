@@ -20,10 +20,8 @@ run/size/viewport_width=1152
 
 [display]
 
-window/size/viewport_width=2500
-window/size/viewport_height=1750
-window/size/mode=3
-window/stretch/scale=2.0
+window/size/mode=2
+window/stretch/mode="viewport"
 
 [input]
 

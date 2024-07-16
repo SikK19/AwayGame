@@ -1,12 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://bl7036g41ale"]
+[gd_scene load_steps=23 format=3 uid="uid://dq2giryhoh22e"]
 
 [ext_resource type="Texture2D" uid="uid://cnwh0nvdt7soa" path="res://Assets/Background/Indoor Background Tile.png" id="1_8t1yi"]
 [ext_resource type="PackedScene" uid="uid://cacncuw8chqd8" path="res://Characters/Bird/bird.tscn" id="1_iqvb5"]
 [ext_resource type="Texture2D" uid="uid://la4ukwslfll" path="res://Assets/Background/sky/sky_background0000.png" id="1_vkwvo"]
 [ext_resource type="PackedScene" uid="uid://bnhytv3l22cqf" path="res://Characters/Human Character/human_character.tscn" id="2_r7061"]
 [ext_resource type="PackedScene" uid="uid://4np5bu4mq4ei" path="res://Level/building blocks/wall_medium.tscn" id="3_n36oo"]
-[ext_resource type="PackedScene" uid="uid://dnv48jokjbodd" path="res://Objects/door_l.tscn" id="3_r1vii"]
-[ext_resource type="PackedScene" uid="uid://bou8v0s6ai0di" path="res://Objects/door_r.tscn" id="4_5g86d"]
+[ext_resource type="PackedScene" uid="uid://btovb3xsv3h8e" path="res://Objects/door_l.tscn" id="3_r1vii"]
+[ext_resource type="PackedScene" uid="uid://dwy3g8sthn1kw" path="res://Objects/door_r.tscn" id="4_5g86d"]
 [ext_resource type="TileSet" uid="uid://c236rq06r0qtp" path="res://Level/building blocks/Tileset.tres" id="4_nehge"]
 [ext_resource type="PackedScene" uid="uid://cy0pnhwrhhsiy" path="res://Objects/Key.tscn" id="4_ol0bq"]
 [ext_resource type="PackedScene" uid="uid://o4sufrciwpyy" path="res://Objects/window.tscn" id="4_t4xar"]
@@ -30,6 +30,12 @@ frame_0/texture = ExtResource("13_rpy2v")
 frame_0/duration = 0.1
 frame_1/texture = ExtResource("14_sf4cv")
 frame_1/duration = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygo0p"]
+resource_local_to_scene = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3m30e"]
+resource_local_to_scene = true
 
 [node name="Level1" type="Node2D"]
 
@@ -187,7 +193,6 @@ position = Vector2(5, -89)
 
 [node name="hatch" parent="Walls" instance=ExtResource("11_vdp0k")]
 position = Vector2(-124, -109)
-rotation = 3.48787e-16
 scale = Vector2(0.4, 1)
 start_angle = 90
 end_angle = 0
@@ -230,6 +235,9 @@ shape = SubResource("RectangleShape2D_ji6ps")
 [node name="rain" parent="Rain/Rain" index="1"]
 texture = SubResource("AnimatedTexture_52we5")
 
+[node name="CollisionShape2D" parent="Rain/Rain/damage_box" index="0"]
+shape = SubResource("RectangleShape2D_ygo0p")
+
 [node name="Rain2" parent="Rain" instance=ExtResource("12_1ivao")]
 position = Vector2(-85, -326)
 
@@ -239,6 +247,9 @@ shape = SubResource("RectangleShape2D_ji6ps")
 
 [node name="rain" parent="Rain/Rain2" index="1"]
 texture = SubResource("AnimatedTexture_52we5")
+
+[node name="CollisionShape2D" parent="Rain/Rain2/damage_box" index="0"]
+shape = SubResource("RectangleShape2D_3m30e")
 
 [node name="Traps" type="Node2D" parent="."]
 

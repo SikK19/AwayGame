@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b7efbhadoeod6"]
+[gd_scene load_steps=24 format=3 uid="uid://b7efbhadoeod6"]
 
 [ext_resource type="Texture2D" uid="uid://bagrshmbnrr4j" path="res://Assets/Ground Tiles/Ground Spritesheet.png" id="1_83s3y"]
 [ext_resource type="Texture2D" uid="uid://cnwh0nvdt7soa" path="res://Assets/Background/Indoor Background Tile.png" id="2_aqhwr"]
@@ -29,6 +29,9 @@ frame_0/texture = ExtResource("9_0utey")
 frame_0/duration = 0.1
 frame_1/texture = ExtResource("10_k18ms")
 frame_1/duration = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m28j2"]
+resource_local_to_scene = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3fkp1"]
 texture = ExtResource("1_83s3y")
@@ -153,6 +156,9 @@ shape = SubResource("RectangleShape2D_s2h4c")
 
 [node name="rain" parent="rain_zones/Rain" index="1"]
 texture = SubResource("AnimatedTexture_lntqj")
+
+[node name="CollisionShape2D" parent="rain_zones/Rain/damage_box" index="0"]
+shape = SubResource("RectangleShape2D_m28j2")
 
 [node name="foreground" type="Node2D" parent="."]
 

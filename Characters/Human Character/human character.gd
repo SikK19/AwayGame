@@ -21,6 +21,7 @@ var is_bird_on_human = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
+	#Engine.time_scale = 0.15
 	$Camera2D.bird = bird
 	$key_sprite.play("default")
 

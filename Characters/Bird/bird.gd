@@ -69,7 +69,6 @@ func _physics_process(delta):
 				sprite_flying.flip_h = true
 		
 	if Input.is_action_just_released("fly_to_cursor") && $bird_close_to_human.has_overlapping_areas():
-		print("landing")
 		land_on_character()
 		
 	if Input.is_action_just_released("fly_to_cursor"):
@@ -102,5 +101,4 @@ func take_key():
 	has_key = true
 
 func damage():
-	print("bird damaged")
 	get_tree().call_deferred("reload_current_scene")

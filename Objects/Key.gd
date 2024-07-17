@@ -10,11 +10,8 @@ func _process(_delta):
 
 func interact(body):
 	if !$PickupKey.playing:
-		print("playing Key sound")
 		$PickupKey.play()
 	body.take_key()
-	if body.has_key:
-		print("Key taken")
 	$AnimatedSprite2D.visible = false
 	queue_free()
 

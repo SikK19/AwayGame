@@ -26,7 +26,7 @@ func open():
 		$SoundOpenDoor.play()
 	$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
 	#$StaticBody2D.queue_free()
-	set_collision_layer_value(4, false)
+	#set_collision_layer_value(4, false)
 	is_open = true
 	
 func close():
@@ -37,6 +37,5 @@ func close():
 		$SoundCloseDoor.play()
 	$StaticBody2D/CollisionShape2D.disabled = false
 	#$StaticBody2D.queue_free()
-	set_collision_layer_value(4, true)
+	#set_collision_layer_value(4, true)
 	is_open = false
-	

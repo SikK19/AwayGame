@@ -156,3 +156,5 @@ stream = ExtResource("3_3tfw4")
 
 [node name="SoundCloseDoor" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_0t7sb")
+
+[connection signal="property_list_changed" from="." to="." method="_on_property_list_changed"]

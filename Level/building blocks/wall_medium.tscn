@@ -4,10 +4,10 @@
 
 [node name="wall medium" type="StaticBody2D"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-4.5, 32, 4.5, 32, 4.5, -32, -4.5, -32)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_mgua5")
 region_enabled = true
 region_rect = Rect2(5, 64, 9, 64)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4.5, 33, 4.5, 33, 4.5, -33, -4.5, -33)

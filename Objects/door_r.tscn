@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://dwy3g8sthn1kw"]
 
-[ext_resource type="Script" path="res://Objects/door_l.gd" id="1_akdw5"]
+[ext_resource type="Script" path="res://Objects/door.gd" id="1_njx3l"]
 [ext_resource type="Texture2D" uid="uid://c63nf88msaxmr" path="res://Assets/Interactives/Door.png" id="2_s3dpo"]
 [ext_resource type="Texture2D" uid="uid://bh7dfwngvdmig" path="res://Assets/Forground/Thick Doorframe Spritesheet.png" id="3_qq281"]
 [ext_resource type="AudioStream" uid="uid://cf0gb06lqongi" path="res://Sounds/Objects/UsedSounds/OpenDoor.wav" id="4_l0phb"]
@@ -126,7 +126,7 @@ height = 46.0
 [node name="door_R" type="Area2D"]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("1_akdw5")
+script = ExtResource("1_njx3l")
 
 [node name="door" type="AnimatedSprite2D" parent="."]
 position = Vector2(10, -4)

@@ -14,7 +14,7 @@ func interact(player):
 		close()
 	elif not locked:
 		open()
-	elif player.has_key:	
+	elif  player.has_key:	
 		open()
 		player.loose_key()
 		locked = false

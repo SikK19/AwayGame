@@ -12,7 +12,9 @@ func activate(_state = false):
 func interact(player):	
 	if is_open:
 		close()
-	elif (player.has_key || !locked ) && not is_open:	
+	elif not locked:
+		open()
+	elif player.has_key:	
 		open()
 		player.loose_key()
 		locked = false

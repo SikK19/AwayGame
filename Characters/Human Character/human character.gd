@@ -94,7 +94,7 @@ func _physics_process(delta):
 		#create a new rock scene, throw it in the direction of the player is currently aiming in
 		var rock = rock_scene.instantiate()
 		rock.set_frame($"throwing_arm/throwing test sprite".get_frame())
-		get_parent().add_child(rock)
+		get_tree().get_root().add_child(rock)
 		$"throwing_arm/throwing test sprite".visible = false
 		$"throwing_arm/throwing test sprite".stop()
 		rock.global_position = $throwing_arm.global_position

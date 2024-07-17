@@ -161,18 +161,6 @@ frame = 1
 position = Vector2(-552, 121)
 bird = NodePath("../Bird")
 
-[node name="CollisionShape" parent="human character" index="0"]
-visible = false
-
-[node name="CollisionShape2D" parent="human character/interact box" index="0"]
-visible = false
-
-[node name="CollisionShape2D" parent="human character/human_close_to_bird" index="0"]
-visible = false
-
-[node name="CollisionShape2D" parent="human character/ladder detector" index="0"]
-visible = false
-
 [node name="Bird" parent="." node_paths=PackedStringArray("human") instance=ExtResource("1_iqvb5")]
 position = Vector2(-518, 127)
 human = NodePath("../human character")
@@ -270,7 +258,7 @@ start_angle = 90
 end_angle = 180
 
 [node name="wall big" parent="Walls" instance=ExtResource("14_8ddea")]
-position = Vector2(-629, 22)
+position = Vector2(-629, 23)
 
 [node name="wall medium" parent="Walls" instance=ExtResource("3_n36oo")]
 position = Vector2(-629, -73)
@@ -343,21 +331,12 @@ locked = true
 position = Vector2(-35, 118)
 locked = true
 
-[node name="door_R" parent="Doors" instance=ExtResource("4_5g86d")]
-position = Vector2(-634, 118)
-
-[node name="door_frame" parent="Doors/door_R" index="1"]
-position = Vector2(7.5, -3)
-
-[node name="CollisionShape2D" parent="Doors/door_R/StaticBody2D" index="0"]
-visible = false
-
-[node name="CollisionShape2D" parent="Doors/door_R" index="3"]
-visible = false
-
 [node name="door_R2" parent="Doors" instance=ExtResource("4_5g86d")]
 position = Vector2(-131, 118)
 locked = true
+
+[node name="door_R" parent="Doors" instance=ExtResource("4_5g86d")]
+position = Vector2(-626, 119)
 
 [node name="Rain" type="Node2D" parent="."]
 
@@ -539,9 +518,6 @@ texture = ExtResource("24_dvuvl")
 
 [connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]
 
-[editable path="human character"]
-[editable path="Doors/door_L"]
-[editable path="Doors/door_R"]
 [editable path="Rain/Rain"]
 [editable path="Rain/Rain2"]
 [editable path="Rain/Rain3"]

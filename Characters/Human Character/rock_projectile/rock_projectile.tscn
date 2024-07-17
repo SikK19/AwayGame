@@ -17,7 +17,6 @@ script = ExtResource("1_tmy48")
 shape = SubResource("CircleShape2D_7d0r7")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2.38419e-07, 2.38419e-07)
 sprite_frames = ExtResource("2_1w2ot")
 
 [node name="hitbox" type="Area2D" parent="."]

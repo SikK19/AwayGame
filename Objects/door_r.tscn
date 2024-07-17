@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://dwy3g8sthn1kw"]
 
 [ext_resource type="Script" path="res://Objects/door_l.gd" id="1_akdw5"]
-[ext_resource type="Texture2D" uid="uid://cn0me305jp8d5" path="res://Assets/Interactives/Door.png" id="2_s3dpo"]
+[ext_resource type="Texture2D" uid="uid://c63nf88msaxmr" path="res://Assets/Interactives/Door.png" id="2_s3dpo"]
 [ext_resource type="Texture2D" uid="uid://bh7dfwngvdmig" path="res://Assets/Forground/Thick Doorframe Spritesheet.png" id="3_qq281"]
 [ext_resource type="AudioStream" uid="uid://cf0gb06lqongi" path="res://Sounds/Objects/UsedSounds/OpenDoor.wav" id="4_l0phb"]
 [ext_resource type="AudioStream" uid="uid://des7jm1nu3170" path="res://Sounds/Objects/UsedSounds/CloseDoor.wav" id="5_oe0bo"]
@@ -118,7 +118,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7c3r"]
-size = Vector2(6, 58)
+size = Vector2(9, 60)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r4xl5"]
 height = 46.0
@@ -142,9 +142,10 @@ region_rect = Rect2(33, 0, 23, 59)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-9, -6)
+collision_priority = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(8, 3)
+position = Vector2(7.5, 3)
 shape = SubResource("RectangleShape2D_t7c3r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
